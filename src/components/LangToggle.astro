@@ -1,6 +1,3 @@
----
-import i18next from "i18next";
----
 <lang-toggle>
     <button>
         <span class="sr-only">Fr</span>
@@ -28,9 +25,13 @@ import i18next from "i18next";
 		padding: 0.5rem;
 		width: 2rem;
 		height: 2rem;
-		font-size: 1rem;
+		font-size: 0.9rem;
 		color: var(--accent-overlay);
 	}
+
+    .icon.en {
+        margin-left: -0.1;
+    }
 
 	.icon.fr::before {
 		content: '';
@@ -41,12 +42,12 @@ import i18next from "i18next";
 		border-radius: 999rem;
 	}
 
-	:global(.theme-en) .icon.fr::before {
+	:global(.lang-en) .icon.fr::before {
 		transform: translateX(100%);
 	}
 
-	:global(.theme-en) .icon.en,
-	:global(html:not(.theme-en)) .icon.fr,
+	:global(.lang-en) .icon.en,
+	:global(html:not(.lang-en)) .icon.fr,
 	button[aria-pressed='false'] .icon.fr {
 		color: var(--accent-text-over);
 	}
@@ -61,36 +62,88 @@ import i18next from "i18next";
 	}
 
 	@media (forced-colors: active) {
-		.icon.light::before {
+		.icon.fr::before {
 			background-color: SelectedItem;
 		}
 	}
 </style>
 
+<!-- <script>
+import i18n from "../i18n";
+
+class LanguageToggle extends HTMLElement {
+	constructor() {
+		super();
+
+		const button = this.querySelector('button')!;
+
+		const setLanguage = (isEn: boolean) => {
+			document.documentElement.classList[isEn ? 'add' : 'remove']('lang-en');
+			button.setAttribute('aria-pressed', String(isEn));
+
+			i18n
+			.changeLanguage(isEn ? 'en' : 'fr')
+
+			i18n.reloadResources()
+			// ,console.log(i18n.language)
+			// console.log("la langue est en : " ,isEn ? "anglais" : "francais")
+
+			
+		};
+
+		button.addEventListener('click', () => {
+			const isEnglish = !this.isEn();
+			setLanguage(isEnglish);
+		});
+
+		setLanguage(this.isEn());
+		// console.log(i18n.language)
+	}
+
+	isEn() {
+		return document.documentElement.classList.contains('lang-en');
+	}
+
+}
+customElements.define('lang-toggle', LanguageToggle);
+</script>	 -->
+
 <script>
-    class LanguageToggle extends HTMLElement {
-        constructor() {
-            super();
-    
-            const button = this.querySelector('button')!;
-    
-            /** Set the language to fr/en mode. */
-            const setLanguage = (isEn: any) => {
-                document.documentElement.classList[isEn ? 'add' : 'remove']('theme-en');
-                button.setAttribute('aria-pressed', String(isEn));
-            };
-    
-            // Toggle the language when a user clicks the button.
-            button.addEventListener('click', () => setLanguage(!this.isEn()));
-    
-            // Initialize button state to reflect current language.
-            setLanguage(this.isEn());
-        }
-    
-        isEn() {
-            return document.documentElement.classList.contains('theme-en');
-        }
-    }
-    
-    customElements.define('lang-toggle', LanguageToggle);
-    </script>
+	import i18next from "i18next";
+	
+	class LanguageToggle extends HTMLElement {
+		constructor() {
+			super();
+	
+			const button = this.querySelector('button')!;
+	
+			const setLanguage = (isEn: boolean) => {
+				document.documentElement.classList[isEn ? 'add' : 'remove']('lang-en');
+				button.setAttribute('aria-pressed', String(isEn));
+	
+				i18next
+				.changeLanguage(isEn ? 'en' : 'fr')
+	
+				i18next.reloadResources()
+				// ,console.log(i18n.language)
+				// console.log("la langue est en : " ,isEn ? "anglais" : "francais")
+	
+				
+			};
+	
+			button.addEventListener('click', () => {
+				const isEnglish = !this.isEn();
+				setLanguage(isEnglish);
+			});
+	
+			setLanguage(this.isEn());
+			// console.log(i18n.language)
+		}
+	
+		isEn() {
+			return document.documentElement.classList.contains('lang-en');
+		}
+	
+	}
+	customElements.define('lang-toggle', LanguageToggle);
+	</script>	
