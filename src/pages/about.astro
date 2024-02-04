@@ -1,34 +1,88 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import Icon from '../components/Icon.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="About | Alexandre Moreau" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="About | Alexandre Moreau" description="About myself">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
 				title="About"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/photo-sete.jpeg"
-					alt="sunset at Sète, France"
+
+			<img
+				width="1553"
+				height="873"
+				src="/assets/photo-sete.jpeg"
+				alt="sunset at Sète, France"
 				/>
 			</Hero>
 
 			<section>
-				<h2 class="section-title">Background</h2>
+				<h2 class="section-title">Presentation</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+
 					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Hard Skill</h2>
+				<div class="content">
+					<h3>Front-end</h3>
+					<div class="content-logo">
+
+						<span>
+							<Icon icon="html" size="3em" />
+							<p>Html</p>
+						</span>
+						
+						<span>
+							<Icon icon="css" size="3em" />
+							<p>Css</p>
+						</span>
+						
+						<span>
+							<Icon icon='js' size='3em' />
+							<p>Javascript</p>
+						</span>
+					</div>
+						
+				</div>
+				<div class="content">
+					<h3>Back-end</h3>
+					<div class="content-logo">
+						<span>
+							<Icon icon='node' size='3em' />
+							<p>NodeJs</p>
+						</span>
+						<span>
+							<Icon icon='py' size='3em' />
+							<p>Python</p>
+						</span>
+						<span>
+							<Icon icon='django' size='3em' />
+							<p>Django</p>
+						</span>
+					</div>
+				</div>
+				<div class="content">
+					<h3>Other</h3>
+					<div class="content-logo">
+						<span>
+							<Icon icon='figma' size='3em' />
+							<p>Figma</p>
+						</span>
+						<span>
+							<Icon icon='apple' size='3em' />
+							<p>MacOs</p>
+						</span>
+					</div>
+
+
 				</div>
 			</section>
 			<section>
@@ -38,13 +92,32 @@ import Hero from '../components/Hero.astro';
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title">Soft Skills</h2>
 				<div class="content">
-					<p>Html</p>
-					<p>Css</p>
-					<p>Javascript</p>
+					<div class="content-softskill">
+						<span>
+							<h3>Profesionnal</h3>
+							<p>Patient</p>
+							<p>Méticuleux</p>
+						</span>
+						<span>
+							<h3>Comportemental</h3>
+							<p>calme</p>
+						</span>
+					</div>
 				</div>
 			</section>
+			
+			<section>
+				<div class="cv-btn">
+					<a class="cv" href="/assets/cv.pdf" download="Moreau_Alexandre_resume.pdf">Download CV</a>
+					<a href="/cv">
+						<img class="cv-img" src="/assets/my-resume.webp" alt="my-resume">
+						<span class="cv-hover">View more</span>
+					</a>
+				</div>
+			</section>
+
 		</main>
 
 		<ContactCTA />
@@ -52,6 +125,10 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+	/* *{
+		border: 1px solid red;
+	} */
+
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -61,7 +138,7 @@ import Hero from '../components/Hero.astro';
 	img {
 		margin-top: 1.5rem;
 		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+		/* box-shadow: var(--shadow-md); */
 	}
 
 	section {
@@ -91,6 +168,61 @@ import Hero from '../components/Hero.astro';
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}
+
+	.content-logo {
+		display: flex;
+		gap: 1.2em;
+		text-align: center;
+	}
+
+	.content-softskill {
+		display: flex;
+		gap: 3em;
+	}
+
+	h3 {
+		margin-bottom: 0.5em;
+	}
+
+	.cv-btn {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+	.cv {
+		height: fit-content;
+		font-size: var(--text-xl);
+		font-weight: 600;
+
+		text-align: center;
+		color: var(--accent-text-over);
+		text-decoration: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+	}
+
+	.cv-img {
+		margin-top: 0;
+		width: 100%;
+	}
+
+	
+	.cv::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		transition: background-color var(--theme-transition);
+		mix-blend-mode: overlay;
+	}
+
+	
+	@media (min-width: 20em) {
+		.cv {
+			font-size: var(--text-lg);
+		}
+	}
+
 
 	@media (min-width: 50em) {
 		.about {
