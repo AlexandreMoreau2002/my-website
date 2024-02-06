@@ -5,71 +5,80 @@ import Hero from "../components/Hero.astro";
 
 <BaseLayout title="Resume | Alexandre Moreau" description="About myself">
   <main class="wrapper">
-    <Hero 
-        title="My Resume"
+    <Hero title="My Resume">
+      <div class="link">
+        <a href="/about#cv" class="return">Return</a>
+        <a
+          class="cv"
+          href="/assets/cv.pdf"
+          download="Moreau_Alexandre_resume.pdf"
         >
-
-      <a class="cv" href="/assets/cv.pdf" download="Moreau_Alexandre_resume.pdf">Download CV</a>
-      <img
-        src="/assets/my-resume.webp" 
-        alt="my resume" 
-        />
+          Download CV
+        </a>
+      </div>
+      <img src="/assets/my-resume.webp" alt="my resume" />
     </Hero>
   </main>
 </BaseLayout>
 
 <style>
-    img {
-        margin: auto;
-        width: 80%;
+  img {
+    margin: auto;
+    width: 80%;
+  }
+
+  a {
+    width: 25%;
+    /* margin: auto; */
+
+    position: relative;
+    display: flex;
+    place-content: center;
+    text-align: center;
+    padding: 0.56em 2em;
+    gap: 0.8em;
+    color: var(--accent-text-over);
+    text-decoration: none;
+    line-height: 1.1;
+    border-radius: 999rem;
+    overflow: hidden;
+    background: var(--gradient-accent-orange);
+    box-shadow: var(--shadow-md);
+    white-space: nowrap;
+  }
+
+  .link {
+    display: flex;
+	justify-content: center;
+	gap: 4rem;
+    /* margin: auto; */
+  }
+
+  @media (min-width: 20em) {
+    a {
+      font-size: var(--text-lg);
     }
+  }
 
-	a {
-        width: 25%;
-        margin: auto;
+  /* Overlay for hover effects. */
+  a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: background-color var(--theme-transition);
+    mix-blend-mode: overlay;
+  }
 
-		position: relative;
-		display: flex;
-		place-content: center;
-		text-align: center;
-		padding: 0.56em 2em;
-		gap: 0.8em;
-		color: var(--accent-text-over);
-		text-decoration: none;
-		line-height: 1.1;
-		border-radius: 999rem;
-		overflow: hidden;
-		background: var(--gradient-accent-orange);
-		box-shadow: var(--shadow-md);
-		white-space: nowrap;
-	}
+  a:focus::after,
+  a:hover::after {
+    background-color: hsla(var(--gray-999-basis), 0.3);
+  }
 
-	@media (min-width: 20em) {
-		a {
-			font-size: var(--text-lg);
-		}
-	}
-
-	/* Overlay for hover effects. */
-	a::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		transition: background-color var(--theme-transition);
-		mix-blend-mode: overlay;
-	}
-
-	a:focus::after,
-	a:hover::after {
-		background-color: hsla(var(--gray-999-basis), 0.3);
-	}
-
-	@media (min-width: 50em) {
-		a {
-			padding: 1.125rem 2.5rem;
-			font-size: var(--text-xl);
-		}
-	}
+  @media (min-width: 50em) {
+    a {
+      padding: 1.125rem 2.5rem;
+      font-size: var(--text-xl);
+    }
+  }
 </style>
-
