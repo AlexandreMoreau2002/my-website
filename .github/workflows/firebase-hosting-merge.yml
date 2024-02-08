@@ -18,3 +18,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MY_WEBSITE_BFCAB }}'
           channelId: live
           projectId: my-website-bfcab
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
