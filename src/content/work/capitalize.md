@@ -1,7 +1,7 @@
 ---
 title: Capitalize
 publishDate: 2024-05-29 00:00:00
-img: /assets/capitalize
+img: /assets/capitalize.png
 img_alt: capitalize picture
 description: |
   Little website for convert text
