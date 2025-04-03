@@ -1,54 +1,810 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="description" property="og:description" content="The personal website of Alexandre Moreau"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v4.3.4"><title>Alexandre Moreau: Personal website</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap" rel="stylesheet"><script>
-	// This code is inlined in the head to make dark mode instant & blocking.
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-37fxchfa>
 
-	if (typeof localStorage !== 'undefined') {
-		// Watch the document element and persist user preference when it changes.
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('theme-dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" property="og:description" content="The personal website of Alexandre Moreau">
+	<meta name="viewport" content="width=device-width">
+	<meta name="generator" content="Astro v4.3.4">
+	<title>Alexandre Moreau: Personal website</title>
+	<link rel="icon" type="image/svg+xml" href="/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+		rel="stylesheet">
+	<script>
+		// This code is inlined in the head to make dark mode instant & blocking.
+		const getThemePreference = () => {
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme');
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		};
+		const isDark = getThemePreference() === 'dark';
+		document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
 
-	const getLangPreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) {
-			return localStorage.getItem('lang');
+		if (typeof localStorage !== 'undefined') {
+			// Watch the document element and persist user preference when it changes.
+			const observer = new MutationObserver(() => {
+				const isDark = document.documentElement.classList.contains('theme-dark');
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			});
+			observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 		}
-		return window.matchMedia('(prefers-color-scheme: en)').matches ? 'en' : 'fr';
-	};
-	const isEn = getLangPreference() === 'en';
-	document.documentElement.classList[isEn ? 'add' : 'remove']('lang-en');
-	
-	if (typeof localStorage !== 'undefined') {
-		// Watch the document element and persist user preference when it changes.
-		const observer = new MutationObserver(() => {
-			const isEn = document.documentElement.classList.contains('lang-en');
-			localStorage.setItem('lang', isEn ? 'en' : 'fr');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script><link rel="stylesheet" href="/_astro/about.r37NoXlT.css" />
-<style>.grid[data-astro-cid-vc5tsdmu]{display:grid;grid-auto-rows:1fr;gap:1rem;list-style:none;padding:0}.grid[data-astro-cid-vc5tsdmu].small{grid-template-columns:1fr 1fr;gap:1.5rem}.grid[data-astro-cid-vc5tsdmu].small>:last-child:nth-child(odd){grid-column:1 / 3}@media (min-width: 50em){.grid[data-astro-cid-vc5tsdmu]{grid-template-columns:1fr 1fr;gap:4rem}.grid[data-astro-cid-vc5tsdmu].offset{--row-offset: 7.5rem;padding-bottom:var(--row-offset)}.grid[data-astro-cid-vc5tsdmu].offset>:nth-child(odd){transform:translateY(var(--row-offset))}.grid[data-astro-cid-vc5tsdmu].offset>:last-child:nth-child(odd){grid-column:2 / 3;transform:none}.grid[data-astro-cid-vc5tsdmu].small{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}.grid[data-astro-cid-vc5tsdmu].small>*{flex-basis:20rem}}.card[data-astro-cid-lgkm4u2a]{display:grid;grid-template:auto 1fr / auto 1fr;height:11rem;background:var(--gradient-subtle);border:1px solid var(--gray-800);border-radius:.75rem;overflow:hidden;box-shadow:var(--shadow-sm);text-decoration:none;font-family:var(--font-brand);font-size:var(--text-lg);font-weight:500;transition:box-shadow var(--theme-transition)}.card[data-astro-cid-lgkm4u2a]:hover{box-shadow:var(--shadow-md)}.title[data-astro-cid-lgkm4u2a]{grid-area:1 / 1 / 2 / 2;z-index:1;margin:.5rem;padding:.5rem 1rem;background:var(--gray-999);color:var(--gray-200);border-radius:.375rem}img[data-astro-cid-lgkm4u2a]{grid-area:1 / 1 / 3 / 3;width:100%;height:100%;object-fit:cover}@media (min-width: 50em){.card[data-astro-cid-lgkm4u2a]{height:22rem;border-radius:1.5rem}.title[data-astro-cid-lgkm4u2a]{border-radius:.9375rem}}
-.pill[data-astro-cid-2qeywk4b]{display:flex;padding:.5rem 1rem;gap:.5rem;color:var(--accent-text-over);border:1px solid var(--accent-regular);background-color:var(--accent-regular);border-radius:999rem;font-size:var(--text-md);line-height:1.35;white-space:nowrap}
-a[data-astro-cid-balv45lp]{position:relative;display:flex;place-content:center;text-align:center;padding:.56em 2em;gap:.8em;color:var(--accent-text-over);text-decoration:none;line-height:1.1;border-radius:999rem;overflow:hidden;background:var(--gradient-accent-orange);box-shadow:var(--shadow-md);white-space:nowrap}@media (min-width: 20em){a[data-astro-cid-balv45lp]{font-size:var(--text-lg)}}a[data-astro-cid-balv45lp]:after{content:"";position:absolute;inset:0;pointer-events:none;transition:background-color var(--theme-transition);mix-blend-mode:overlay}a[data-astro-cid-balv45lp]:focus:after,a[data-astro-cid-balv45lp]:hover:after{background-color:hsla(var(--gray-999-basis),.3)}@media (min-width: 50em){a[data-astro-cid-balv45lp]{padding:1.125rem 2.5rem;font-size:var(--text-xl)}}aside[data-astro-cid-rcdzuq3a]{display:flex;flex-direction:column;align-items:center;gap:3rem;border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800);padding:5rem 1.5rem;background-color:var(--gray-999_40);box-shadow:var(--shadow-sm)}h2[data-astro-cid-rcdzuq3a]{font-size:var(--text-xl);text-align:center;max-width:15ch}@media (min-width: 50em){aside[data-astro-cid-rcdzuq3a]{padding:7.5rem;flex-direction:row;flex-wrap:wrap;justify-content:space-between}h2[data-astro-cid-rcdzuq3a]{font-size:var(--text-3xl);text-align:left}}
-.box[data-astro-cid-ab4ihpzs]{border:1px solid var(--gray-800);border-radius:.75rem;padding:1.5rem;background-color:var(--gray-999_40);box-shadow:var(--shadow-sm)}.skills[data-astro-cid-ab4ihpzs]{display:flex;flex-direction:column;gap:3rem}.skills[data-astro-cid-ab4ihpzs] h2[data-astro-cid-ab4ihpzs]{font-size:var(--text-lg)}.skills[data-astro-cid-ab4ihpzs] p[data-astro-cid-ab4ihpzs]{color:var(--gray-400)}@media (min-width: 50em){.box[data-astro-cid-ab4ihpzs]{border-radius:1.5rem;padding:2.5rem}.skills[data-astro-cid-ab4ihpzs]{display:grid;grid-template-columns:repeat(3,1fr);gap:5rem}.skills[data-astro-cid-ab4ihpzs] h2[data-astro-cid-ab4ihpzs]{font-size:var(--text-2xl)}}.hero[data-astro-cid-j7pv25f6]{display:flex;flex-direction:column;align-items:center;gap:2rem}.roles[data-astro-cid-j7pv25f6]{display:none}.hero[data-astro-cid-j7pv25f6] img[data-astro-cid-j7pv25f6]{aspect-ratio:5 / 4;object-fit:cover;object-position:center;border-radius:1.5rem;box-shadow:var(--shadow-md)}@media (min-width: 50em){.hero[data-astro-cid-j7pv25f6]{display:grid;grid-template-columns:6fr 4fr;padding-inline:2.5rem;gap:3.75rem}.roles[data-astro-cid-j7pv25f6]{margin-top:.5rem;display:flex;gap:.5rem}.hero[data-astro-cid-j7pv25f6] img[data-astro-cid-j7pv25f6]{aspect-ratio:3 / 4;border-radius:4.5rem;object-fit:cover}}.section[data-astro-cid-j7pv25f6]{display:grid;gap:2rem}.with-background[data-astro-cid-j7pv25f6]{position:relative}.with-background[data-astro-cid-j7pv25f6]:before{--hero-bg: var(--bg-image-subtle-2);content:"";position:absolute;pointer-events:none;left:50%;width:100vw;aspect-ratio:calc(2.25 / var(--bg-scale));top:0;transform:translateY(-75%) translate(-50%);background:url(/assets/backgrounds/noise.png) top center/220px repeat,var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,var(--gray-999);background-blend-mode:overlay,normal,normal,normal;mix-blend-mode:var(--bg-blend-mode);z-index:-1}.with-background[data-astro-cid-j7pv25f6].bg-variant:before{--hero-bg: var(--bg-image-subtle-1)}.section-header[data-astro-cid-j7pv25f6]{justify-self:center;text-align:center;max-width:50ch;font-size:var(--text-md);color:var(--gray-300)}.section-header[data-astro-cid-j7pv25f6] h3[data-astro-cid-j7pv25f6]{font-size:var(--text-2xl)}@media (min-width: 50em){.section[data-astro-cid-j7pv25f6]{grid-template-columns:repeat(4,1fr);grid-template-areas:"header header header header" "gallery gallery gallery gallery";gap:5rem}.section[data-astro-cid-j7pv25f6].with-cta{grid-template-areas:"header header header cta" "gallery gallery gallery gallery"}.section-header[data-astro-cid-j7pv25f6]{grid-area:header;font-size:var(--text-lg)}.section-header[data-astro-cid-j7pv25f6] h3[data-astro-cid-j7pv25f6]{font-size:var(--text-4xl)}.with-cta[data-astro-cid-j7pv25f6] .section-header[data-astro-cid-j7pv25f6]{justify-self:flex-start;text-align:left}.gallery[data-astro-cid-j7pv25f6]{grid-area:gallery}.cta[data-astro-cid-j7pv25f6]{grid-area:cta}}.mention-card[data-astro-cid-j7pv25f6]{display:flex;height:7rem;justify-content:center;align-items:center;text-align:center;border:1px solid var(--gray-800);border-radius:1.5rem;color:var(--gray-300);background:var(--gradient-subtle);box-shadow:var(--shadow-sm)}@media (min-width: 50em){.mention-card[data-astro-cid-j7pv25f6]{border-radius:1.5rem;height:9.5rem}}
-svg[data-astro-cid-patnjmll]{vertical-align:middle;width:var(--size, 1em);height:var(--size, 1em)}
-</style><script type="module">addEventListener("load",()=>document.documentElement.classList.add("loaded"));class i extends HTMLElement{constructor(){super(),this.appendChild(this.querySelector("template").content.cloneNode(!0));const t=this.querySelector("button"),e=document.getElementById("menu-content");e.hidden=!0,e.classList.add("menu-content");const n=s=>{t.setAttribute("aria-expanded",s?"true":"false"),e.hidden=!s};t.addEventListener("click",()=>n(e.hidden));const d=s=>{n(s.matches),t.hidden=s.matches},c=window.matchMedia("(min-width: 50em)");d(c),c.addEventListener("change",d)}}customElements.define("menu-button",i);class a extends HTMLElement{constructor(){super();const t=this.querySelector("button"),e=n=>{document.documentElement.classList[n?"add":"remove"]("theme-dark"),t.setAttribute("aria-pressed",String(n))};t.addEventListener("click",()=>e(!this.isDark())),e(this.isDark())}isDark(){return document.documentElement.classList.contains("theme-dark")}}customElements.define("theme-toggle",a);
-</script></head> <body data-astro-cid-37fxchfa> <div class="stack backgrounds" data-astro-cid-37fxchfa> <nav data-astro-cid-dmqpwcec> <div class="menu-header" data-astro-cid-dmqpwcec> <a href="/" class="site-title" data-astro-cid-dmqpwcec> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="url(#icon-gradient-q3w5ega5)" fill="url(#icon-gradient-q3w5ega5)" style="--size:1.6em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m80 96 40 32-40 32m56 0h40"/><rect width="192" height="160" x="32" y="48" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.97" rx="8.5"/></g> <linearGradient id="icon-gradient-q3w5ega5" x1="23" x2="235" y1="43" y2="202" gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll> <stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop> <stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop> <stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop> </linearGradient> </svg> 
-Alexandre Moreau
-</a> <menu-button data-astro-cid-dmqpwcec> <template data-astro-cid-dmqpwcec> <button class="menu-button" aria-expanded="false" data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>Menu</span> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M40 128h176M40 64h176M40 192h176"/></g>  </svg>  </button> </template> </menu-button> </div> <noscript> <ul class="nav-items" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a aria-current="true" class="link active" href="/" data-astro-cid-dmqpwcec> Home </a> </li><li data-astro-cid-dmqpwcec> <a class="link" href="/project/" data-astro-cid-dmqpwcec> Project </a> </li><li data-astro-cid-dmqpwcec> <a class="link" href="/about/" data-astro-cid-dmqpwcec> About </a> </li> </ul> </noscript> <noscript> <div class="menu-footer" data-astro-cid-dmqpwcec> <div class="socials" data-astro-cid-dmqpwcec> <a href="https://www.linkedin.com/in/alexandre-moreau-aa9440221/" class="social" data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>Linkdin</span> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><rect width="184" height="184" x="36" y="36" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" rx="8"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M120 112v64m-32-64v64m32-36a28 28 0 0 1 56 0v36"/><circle stroke="none" cx="88" cy="80" r="12"/></g>  </svg>  </a><a href="https://github.com/AlexandreMoreau2002" class="social" data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>GitHub</span> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><g stroke-linecap="round" stroke-linejoin="round"><path fill="none" stroke-width="14.7" d="M55.7 167.2c13.9 1 21.3 13.1 22.2 14.6 4.2 7.2 10.4 9.6 18.3 7.1l1.1-3.4a60.3 60.3 0 0 1-25.8-11.9c-12-10.1-18-25.6-18-46.3"/><path fill="none" stroke-width="16" d="M61.4 205.1a24.5 24.5 0 0 1-3-6.1c-3.2-7.9-7.1-10.6-7.8-11.1l-1-.6c-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.7 46.7 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4 0 42.6-25.8 54.7-43.6 58.7 1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3"/><path fill="none" stroke-width="16" d="M160.9 185.7c1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3A98.6 98.6 0 1 0 61.4 205c-1.4-2.1-11.3-17.5-11.8-17.8-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.4 46.4 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4.1 42.6-25.8 54.7-43.6 58.6z"/><path fill="none" stroke-width="18.7" d="m170.1 203.3 17.3-12 17.2-18.7 9.5-26.6v-27.9l-9.5-27.5" /><path fill="none" stroke-width="22.7" d="m92.1 57.3 23.3-4.6 18.7-1.4 29.3 5.4m-110 32.6-8 16-4 21.4.6 20.3 3.4 13" /><path fill="none" stroke-width="13.3" d="M28.8 133a100 100 0 0 0 66.9 94.4v-8.7c-22.4 1.8-33-11.5-35.6-19.8-3.4-8.6-7.8-11.4-8.5-11.8"/></g></g>  </svg>  </a> </div> </div> </noscript> <div id="menu-content" hidden data-astro-cid-dmqpwcec> <ul class="nav-items" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a aria-current="true" class="link active" href="/" data-astro-cid-dmqpwcec> Home </a> </li><li data-astro-cid-dmqpwcec> <a class="link" href="/project/" data-astro-cid-dmqpwcec> Project </a> </li><li data-astro-cid-dmqpwcec> <a class="link" href="/about/" data-astro-cid-dmqpwcec> About </a> </li> </ul> <div class="menu-footer" data-astro-cid-dmqpwcec> <div class="socials" data-astro-cid-dmqpwcec> <a href="https://www.linkedin.com/in/alexandre-moreau-aa9440221/" class="social" data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>Linkdin</span> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><rect width="184" height="184" x="36" y="36" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" rx="8"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M120 112v64m-32-64v64m32-36a28 28 0 0 1 56 0v36"/><circle stroke="none" cx="88" cy="80" r="12"/></g>  </svg>  </a><a href="https://github.com/AlexandreMoreau2002" class="social" data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>GitHub</span> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><g stroke-linecap="round" stroke-linejoin="round"><path fill="none" stroke-width="14.7" d="M55.7 167.2c13.9 1 21.3 13.1 22.2 14.6 4.2 7.2 10.4 9.6 18.3 7.1l1.1-3.4a60.3 60.3 0 0 1-25.8-11.9c-12-10.1-18-25.6-18-46.3"/><path fill="none" stroke-width="16" d="M61.4 205.1a24.5 24.5 0 0 1-3-6.1c-3.2-7.9-7.1-10.6-7.8-11.1l-1-.6c-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.7 46.7 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4 0 42.6-25.8 54.7-43.6 58.7 1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3"/><path fill="none" stroke-width="16" d="M160.9 185.7c1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3A98.6 98.6 0 1 0 61.4 205c-1.4-2.1-11.3-17.5-11.8-17.8-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.4 46.4 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4.1 42.6-25.8 54.7-43.6 58.6z"/><path fill="none" stroke-width="18.7" d="m170.1 203.3 17.3-12 17.2-18.7 9.5-26.6v-27.9l-9.5-27.5" /><path fill="none" stroke-width="22.7" d="m92.1 57.3 23.3-4.6 18.7-1.4 29.3 5.4m-110 32.6-8 16-4 21.4.6 20.3 3.4 13" /><path fill="none" stroke-width="13.3" d="M28.8 133a100 100 0 0 0 66.9 94.4v-8.7c-22.4 1.8-33-11.5-35.6-19.8-3.4-8.6-7.8-11.4-8.5-11.8"/></g></g>  </svg>  </a> </div> <div class="theme-toggle" data-astro-cid-dmqpwcec> <theme-toggle data-astro-cid-x3pjskd3> <button data-astro-cid-x3pjskd3> <span class="sr-only" data-astro-cid-x3pjskd3>Dark theme</span> <span class="icon light" data-astro-cid-x3pjskd3><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><circle cx="128" cy="128" r="60" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M128 36V16M63 63 49 49m-13 79H16m47 65-14 14m79 13v20m65-47 14 14m13-79h20m-47-65 14-14"/></g>  </svg> </span> <span class="icon dark" data-astro-cid-x3pjskd3><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M216 112V64m24 24h-48m-24-64v32m16-16h-32m65 113A92 92 0 0 1 103 39h0a92 92 0 1 0 114 114Z"/></g>  </svg> </span> </button> </theme-toggle>   </div> <!-- <div class="lang-toggle">
+
+		const getLangPreference = () => {
+			if (typeof localStorage !== 'undefined' && localStorage.getItem('lang')) {
+				return localStorage.getItem('lang');
+			}
+			return window.matchMedia('(prefers-color-scheme: en)').matches ? 'en' : 'fr';
+		};
+		const isEn = getLangPreference() === 'en';
+		document.documentElement.classList[isEn ? 'add' : 'remove']('lang-en');
+
+		if (typeof localStorage !== 'undefined') {
+			// Watch the document element and persist user preference when it changes.
+			const observer = new MutationObserver(() => {
+				const isEn = document.documentElement.classList.contains('lang-en');
+				localStorage.setItem('lang', isEn ? 'en' : 'fr');
+			});
+			observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		}
+	</script>
+	<link rel="stylesheet" href="/_astro/about.r37NoXlT.css" />
+	<style>
+		.grid[data-astro-cid-vc5tsdmu] {
+			display: grid;
+			grid-auto-rows: 1fr;
+			gap: 1rem;
+			list-style: none;
+			padding: 0
+		}
+
+		.grid[data-astro-cid-vc5tsdmu].small {
+			grid-template-columns: 1fr 1fr;
+			gap: 1.5rem
+		}
+
+		.grid[data-astro-cid-vc5tsdmu].small>:last-child:nth-child(odd) {
+			grid-column: 1 / 3
+		}
+
+		@media (min-width: 50em) {
+			.grid[data-astro-cid-vc5tsdmu] {
+				grid-template-columns: 1fr 1fr;
+				gap: 4rem
+			}
+
+			.grid[data-astro-cid-vc5tsdmu].offset {
+				--row-offset: 7.5rem;
+				padding-bottom: var(--row-offset)
+			}
+
+			.grid[data-astro-cid-vc5tsdmu].offset>:nth-child(odd) {
+				transform: translateY(var(--row-offset))
+			}
+
+			.grid[data-astro-cid-vc5tsdmu].offset>:last-child:nth-child(odd) {
+				grid-column: 2 / 3;
+				transform: none
+			}
+
+			.grid[data-astro-cid-vc5tsdmu].small {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 2rem
+			}
+
+			.grid[data-astro-cid-vc5tsdmu].small>* {
+				flex-basis: 20rem
+			}
+		}
+
+		.card[data-astro-cid-lgkm4u2a] {
+			display: grid;
+			grid-template: auto 1fr / auto 1fr;
+			height: 11rem;
+			background: var(--gradient-subtle);
+			border: 1px solid var(--gray-800);
+			border-radius: .75rem;
+			overflow: hidden;
+			box-shadow: var(--shadow-sm);
+			text-decoration: none;
+			font-family: var(--font-brand);
+			font-size: var(--text-lg);
+			font-weight: 500;
+			transition: box-shadow var(--theme-transition)
+		}
+
+		.card[data-astro-cid-lgkm4u2a]:hover {
+			box-shadow: var(--shadow-md)
+		}
+
+		.title[data-astro-cid-lgkm4u2a] {
+			grid-area: 1 / 1 / 2 / 2;
+			z-index: 1;
+			margin: .5rem;
+			padding: .5rem 1rem;
+			background: var(--gray-999);
+			color: var(--gray-200);
+			border-radius: .375rem
+		}
+
+		img[data-astro-cid-lgkm4u2a] {
+			grid-area: 1 / 1 / 3 / 3;
+			width: 100%;
+			height: 100%;
+			object-fit: cover
+		}
+
+		@media (min-width: 50em) {
+			.card[data-astro-cid-lgkm4u2a] {
+				height: 22rem;
+				border-radius: 1.5rem
+			}
+
+			.title[data-astro-cid-lgkm4u2a] {
+				border-radius: .9375rem
+			}
+		}
+
+		.pill[data-astro-cid-2qeywk4b] {
+			display: flex;
+			padding: .5rem 1rem;
+			gap: .5rem;
+			color: var(--accent-text-over);
+			border: 1px solid var(--accent-regular);
+			background-color: var(--accent-regular);
+			border-radius: 999rem;
+			font-size: var(--text-md);
+			line-height: 1.35;
+			white-space: nowrap
+		}
+
+		a[data-astro-cid-balv45lp] {
+			position: relative;
+			display: flex;
+			place-content: center;
+			text-align: center;
+			padding: .56em 2em;
+			gap: .8em;
+			color: var(--accent-text-over);
+			text-decoration: none;
+			line-height: 1.1;
+			border-radius: 999rem;
+			overflow: hidden;
+			background: var(--gradient-accent-orange);
+			box-shadow: var(--shadow-md);
+			white-space: nowrap
+		}
+
+		@media (min-width: 20em) {
+			a[data-astro-cid-balv45lp] {
+				font-size: var(--text-lg)
+			}
+		}
+
+		a[data-astro-cid-balv45lp]:after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			transition: background-color var(--theme-transition);
+			mix-blend-mode: overlay
+		}
+
+		a[data-astro-cid-balv45lp]:focus:after,
+		a[data-astro-cid-balv45lp]:hover:after {
+			background-color: hsla(var(--gray-999-basis), .3)
+		}
+
+		@media (min-width: 50em) {
+			a[data-astro-cid-balv45lp] {
+				padding: 1.125rem 2.5rem;
+				font-size: var(--text-xl)
+			}
+		}
+
+		aside[data-astro-cid-rcdzuq3a] {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 3rem;
+			border-top: 1px solid var(--gray-800);
+			border-bottom: 1px solid var(--gray-800);
+			padding: 5rem 1.5rem;
+			background-color: var(--gray-999_40);
+			box-shadow: var(--shadow-sm)
+		}
+
+		h2[data-astro-cid-rcdzuq3a] {
+			font-size: var(--text-xl);
+			text-align: center;
+			max-width: 15ch
+		}
+
+		@media (min-width: 50em) {
+			aside[data-astro-cid-rcdzuq3a] {
+				padding: 7.5rem;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between
+			}
+
+			h2[data-astro-cid-rcdzuq3a] {
+				font-size: var(--text-3xl);
+				text-align: left
+			}
+		}
+
+		.box[data-astro-cid-ab4ihpzs] {
+			border: 1px solid var(--gray-800);
+			border-radius: .75rem;
+			padding: 1.5rem;
+			background-color: var(--gray-999_40);
+			box-shadow: var(--shadow-sm)
+		}
+
+		.skills[data-astro-cid-ab4ihpzs] {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem
+		}
+
+		.skills[data-astro-cid-ab4ihpzs] h2[data-astro-cid-ab4ihpzs] {
+			font-size: var(--text-lg)
+		}
+
+		.skills[data-astro-cid-ab4ihpzs] p[data-astro-cid-ab4ihpzs] {
+			color: var(--gray-400)
+		}
+
+		@media (min-width: 50em) {
+			.box[data-astro-cid-ab4ihpzs] {
+				border-radius: 1.5rem;
+				padding: 2.5rem
+			}
+
+			.skills[data-astro-cid-ab4ihpzs] {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 5rem
+			}
+
+			.skills[data-astro-cid-ab4ihpzs] h2[data-astro-cid-ab4ihpzs] {
+				font-size: var(--text-2xl)
+			}
+		}
+
+		.hero[data-astro-cid-j7pv25f6] {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem
+		}
+
+		.roles[data-astro-cid-j7pv25f6] {
+			display: none
+		}
+
+		.hero[data-astro-cid-j7pv25f6] img[data-astro-cid-j7pv25f6] {
+			aspect-ratio: 5 / 4;
+			object-fit: cover;
+			object-position: center;
+			border-radius: 1.5rem;
+			box-shadow: var(--shadow-md)
+		}
+
+		@media (min-width: 50em) {
+			.hero[data-astro-cid-j7pv25f6] {
+				display: grid;
+				grid-template-columns: 6fr 4fr;
+				padding-inline: 2.5rem;
+				gap: 3.75rem
+			}
+
+			.roles[data-astro-cid-j7pv25f6] {
+				margin-top: .5rem;
+				display: flex;
+				gap: .5rem
+			}
+
+			.hero[data-astro-cid-j7pv25f6] img[data-astro-cid-j7pv25f6] {
+				aspect-ratio: 3 / 4;
+				border-radius: 4.5rem;
+				object-fit: cover
+			}
+		}
+
+		.section[data-astro-cid-j7pv25f6] {
+			display: grid;
+			gap: 2rem
+		}
+
+		.with-background[data-astro-cid-j7pv25f6] {
+			position: relative
+		}
+
+		.with-background[data-astro-cid-j7pv25f6]:before {
+			--hero-bg: var(--bg-image-subtle-2);
+			content: "";
+			position: absolute;
+			pointer-events: none;
+			left: 50%;
+			width: 100vw;
+			aspect-ratio: calc(2.25 / var(--bg-scale));
+			top: 0;
+			transform: translateY(-75%) translate(-50%);
+			background: url(/assets/backgrounds/noise.png) top center/220px repeat, var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, var(--gray-999);
+			background-blend-mode: overlay, normal, normal, normal;
+			mix-blend-mode: var(--bg-blend-mode);
+			z-index: -1
+		}
+
+		.with-background[data-astro-cid-j7pv25f6].bg-variant:before {
+			--hero-bg: var(--bg-image-subtle-1)
+		}
+
+		.section-header[data-astro-cid-j7pv25f6] {
+			justify-self: center;
+			text-align: center;
+			max-width: 50ch;
+			font-size: var(--text-md);
+			color: var(--gray-300)
+		}
+
+		.section-header[data-astro-cid-j7pv25f6] h3[data-astro-cid-j7pv25f6] {
+			font-size: var(--text-2xl)
+		}
+
+		@media (min-width: 50em) {
+			.section[data-astro-cid-j7pv25f6] {
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+				gap: 5rem
+			}
+
+			.section[data-astro-cid-j7pv25f6].with-cta {
+				grid-template-areas: "header header header cta" "gallery gallery gallery gallery"
+			}
+
+			.section-header[data-astro-cid-j7pv25f6] {
+				grid-area: header;
+				font-size: var(--text-lg)
+			}
+
+			.section-header[data-astro-cid-j7pv25f6] h3[data-astro-cid-j7pv25f6] {
+				font-size: var(--text-4xl)
+			}
+
+			.with-cta[data-astro-cid-j7pv25f6] .section-header[data-astro-cid-j7pv25f6] {
+				justify-self: flex-start;
+				text-align: left
+			}
+
+			.gallery[data-astro-cid-j7pv25f6] {
+				grid-area: gallery
+			}
+
+			.cta[data-astro-cid-j7pv25f6] {
+				grid-area: cta
+			}
+		}
+
+		.mention-card[data-astro-cid-j7pv25f6] {
+			display: flex;
+			height: 7rem;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			border: 1px solid var(--gray-800);
+			border-radius: 1.5rem;
+			color: var(--gray-300);
+			background: var(--gradient-subtle);
+			box-shadow: var(--shadow-sm)
+		}
+
+		@media (min-width: 50em) {
+			.mention-card[data-astro-cid-j7pv25f6] {
+				border-radius: 1.5rem;
+				height: 9.5rem
+			}
+		}
+
+		svg[data-astro-cid-patnjmll] {
+			vertical-align: middle;
+			width: var(--size, 1em);
+			height: var(--size, 1em)
+		}
+	</style>
+	<script type="module">addEventListener("load", () => document.documentElement.classList.add("loaded")); class i extends HTMLElement { constructor() { super(), this.appendChild(this.querySelector("template").content.cloneNode(!0)); const t = this.querySelector("button"), e = document.getElementById("menu-content"); e.hidden = !0, e.classList.add("menu-content"); const n = s => { t.setAttribute("aria-expanded", s ? "true" : "false"), e.hidden = !s }; t.addEventListener("click", () => n(e.hidden)); const d = s => { n(s.matches), t.hidden = s.matches }, c = window.matchMedia("(min-width: 50em)"); d(c), c.addEventListener("change", d) } } customElements.define("menu-button", i); class a extends HTMLElement { constructor() { super(); const t = this.querySelector("button"), e = n => { document.documentElement.classList[n ? "add" : "remove"]("theme-dark"), t.setAttribute("aria-pressed", String(n)) }; t.addEventListener("click", () => e(!this.isDark())), e(this.isDark()) } isDark() { return document.documentElement.classList.contains("theme-dark") } } customElements.define("theme-toggle", a);
+	</script>
+</head>
+
+<body data-astro-cid-37fxchfa>
+	<div class="stack backgrounds" data-astro-cid-37fxchfa>
+		<nav data-astro-cid-dmqpwcec>
+			<div class="menu-header" data-astro-cid-dmqpwcec> <a href="/" class="site-title" data-astro-cid-dmqpwcec>
+					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+						aria-hidden="true" stroke="url(#icon-gradient-q3w5ega5)" fill="url(#icon-gradient-q3w5ega5)"
+						style="--size:1.6em" class="astro-patnjmll" data-astro-cid-patnjmll>
+						<g data-astro-cid-patnjmll>
+							<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+								d="m80 96 40 32-40 32m56 0h40" />
+							<rect width="192" height="160" x="32" y="48" fill="none" stroke-linecap="round"
+								stroke-linejoin="round" stroke-width="16.97" rx="8.5" />
+						</g>
+						<linearGradient id="icon-gradient-q3w5ega5" x1="23" x2="235" y1="43" y2="202"
+							gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll>
+							<stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop>
+							<stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop>
+							<stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop>
+						</linearGradient>
+					</svg>
+					Alexandre Moreau
+				</a> <menu-button data-astro-cid-dmqpwcec> <template data-astro-cid-dmqpwcec> <button
+							class="menu-button" aria-expanded="false" data-astro-cid-dmqpwcec> <span class="sr-only"
+								data-astro-cid-dmqpwcec>Menu</span> <svg xmlns="http://www.w3.org/2000/svg" width="40"
+								height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor"
+								fill="currentcolor" class="astro-patnjmll" data-astro-cid-patnjmll>
+								<g data-astro-cid-patnjmll>
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+										d="M40 128h176M40 64h176M40 192h176" />
+								</g>
+							</svg> </button> </template> </menu-button> </div> <noscript>
+				<ul class="nav-items" data-astro-cid-dmqpwcec>
+					<li data-astro-cid-dmqpwcec> <a aria-current="true" class="link active" href="/"
+							data-astro-cid-dmqpwcec> Home </a> </li>
+					<li data-astro-cid-dmqpwcec> <a class="link" href="/project/" data-astro-cid-dmqpwcec> Project </a>
+					</li>
+					<li data-astro-cid-dmqpwcec> <a class="link" href="/about/" data-astro-cid-dmqpwcec> About </a>
+					</li>
+				</ul>
+			</noscript> <noscript>
+				<div class="menu-footer" data-astro-cid-dmqpwcec>
+					<div class="socials" data-astro-cid-dmqpwcec> <a
+							href="https://www.linkedin.com/in/alexandre-moreau-aa9440221/" class="social"
+							data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>Linkdin</span> <svg
+								xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+								aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll"
+								data-astro-cid-patnjmll>
+								<g data-astro-cid-patnjmll>
+									<rect width="184" height="184" x="36" y="36" fill="none" stroke-linecap="round"
+										stroke-linejoin="round" stroke-width="16" rx="8" />
+									<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+										d="M120 112v64m-32-64v64m32-36a28 28 0 0 1 56 0v36" />
+									<circle stroke="none" cx="88" cy="80" r="12" />
+								</g>
+							</svg> </a><a href="https://github.com/AlexandreMoreau2002" class="social"
+							data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>GitHub</span> <svg
+								xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+								aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll"
+								data-astro-cid-patnjmll>
+								<g data-astro-cid-patnjmll>
+									<g stroke-linecap="round" stroke-linejoin="round">
+										<path fill="none" stroke-width="14.7"
+											d="M55.7 167.2c13.9 1 21.3 13.1 22.2 14.6 4.2 7.2 10.4 9.6 18.3 7.1l1.1-3.4a60.3 60.3 0 0 1-25.8-11.9c-12-10.1-18-25.6-18-46.3" />
+										<path fill="none" stroke-width="16"
+											d="M61.4 205.1a24.5 24.5 0 0 1-3-6.1c-3.2-7.9-7.1-10.6-7.8-11.1l-1-.6c-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.7 46.7 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4 0 42.6-25.8 54.7-43.6 58.7 1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3" />
+										<path fill="none" stroke-width="16"
+											d="M160.9 185.7c1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3A98.6 98.6 0 1 0 61.4 205c-1.4-2.1-11.3-17.5-11.8-17.8-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.4 46.4 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4.1 42.6-25.8 54.7-43.6 58.6z" />
+										<path fill="none" stroke-width="18.7"
+											d="m170.1 203.3 17.3-12 17.2-18.7 9.5-26.6v-27.9l-9.5-27.5" />
+										<path fill="none" stroke-width="22.7"
+											d="m92.1 57.3 23.3-4.6 18.7-1.4 29.3 5.4m-110 32.6-8 16-4 21.4.6 20.3 3.4 13" />
+										<path fill="none" stroke-width="13.3"
+											d="M28.8 133a100 100 0 0 0 66.9 94.4v-8.7c-22.4 1.8-33-11.5-35.6-19.8-3.4-8.6-7.8-11.4-8.5-11.8" />
+									</g>
+								</g>
+							</svg> </a> </div>
+				</div>
+			</noscript>
+			<div id="menu-content" hidden data-astro-cid-dmqpwcec>
+				<ul class="nav-items" data-astro-cid-dmqpwcec>
+					<li data-astro-cid-dmqpwcec> <a aria-current="true" class="link active" href="/"
+							data-astro-cid-dmqpwcec> Home </a> </li>
+					<li data-astro-cid-dmqpwcec> <a class="link" href="/project/" data-astro-cid-dmqpwcec> Project </a>
+					</li>
+					<li data-astro-cid-dmqpwcec> <a class="link" href="/about/" data-astro-cid-dmqpwcec> About </a>
+					</li>
+				</ul>
+				<div class="menu-footer" data-astro-cid-dmqpwcec>
+					<div class="socials" data-astro-cid-dmqpwcec> <a
+							href="https://www.linkedin.com/in/alexandre-moreau-aa9440221/" class="social"
+							data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>Linkdin</span> <svg
+								xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+								aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll"
+								data-astro-cid-patnjmll>
+								<g data-astro-cid-patnjmll>
+									<rect width="184" height="184" x="36" y="36" fill="none" stroke-linecap="round"
+										stroke-linejoin="round" stroke-width="16" rx="8" />
+									<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+										d="M120 112v64m-32-64v64m32-36a28 28 0 0 1 56 0v36" />
+									<circle stroke="none" cx="88" cy="80" r="12" />
+								</g>
+							</svg> </a><a href="https://github.com/AlexandreMoreau2002" class="social"
+							data-astro-cid-dmqpwcec> <span class="sr-only" data-astro-cid-dmqpwcec>GitHub</span> <svg
+								xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+								aria-hidden="true" stroke="currentcolor" fill="currentcolor" class="astro-patnjmll"
+								data-astro-cid-patnjmll>
+								<g data-astro-cid-patnjmll>
+									<g stroke-linecap="round" stroke-linejoin="round">
+										<path fill="none" stroke-width="14.7"
+											d="M55.7 167.2c13.9 1 21.3 13.1 22.2 14.6 4.2 7.2 10.4 9.6 18.3 7.1l1.1-3.4a60.3 60.3 0 0 1-25.8-11.9c-12-10.1-18-25.6-18-46.3" />
+										<path fill="none" stroke-width="16"
+											d="M61.4 205.1a24.5 24.5 0 0 1-3-6.1c-3.2-7.9-7.1-10.6-7.8-11.1l-1-.6c-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.7 46.7 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4 0 42.6-25.8 54.7-43.6 58.7 1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3" />
+										<path fill="none" stroke-width="16"
+											d="M160.9 185.7c1.4 4.1 2.2 8.8 2.2 13.7l-.1 23.4v2.3A98.6 98.6 0 1 0 61.4 205c-1.4-2.1-11.3-17.5-11.8-17.8-2.4-1.6-9.5-6.5-7.2-13.9 1.4-4.5 6-7.2 12.3-7.2h.8c4 .3 7.6 1.5 10.7 3.2-9.1-10.1-13.6-24.3-13.6-42.3 0-11.3 3.5-21.7 10.1-30.4A46.4 46.4 0 0 1 65 67.3a8.3 8.3 0 0 1 5-4.7c2.8-.9 13.3-2.7 33.2 9.9a105 105 0 0 1 50.5 0c19.9-12.6 30.4-10.8 33.2-9.9 2.3.7 4.1 2.4 5 4.7 5 12.7 4 23.2 2.6 29.4 6.7 8.7 10 18.9 10 30.4.1 42.6-25.8 54.7-43.6 58.6z" />
+										<path fill="none" stroke-width="18.7"
+											d="m170.1 203.3 17.3-12 17.2-18.7 9.5-26.6v-27.9l-9.5-27.5" />
+										<path fill="none" stroke-width="22.7"
+											d="m92.1 57.3 23.3-4.6 18.7-1.4 29.3 5.4m-110 32.6-8 16-4 21.4.6 20.3 3.4 13" />
+										<path fill="none" stroke-width="13.3"
+											d="M28.8 133a100 100 0 0 0 66.9 94.4v-8.7c-22.4 1.8-33-11.5-35.6-19.8-3.4-8.6-7.8-11.4-8.5-11.8" />
+									</g>
+								</g>
+							</svg> </a> </div>
+					<div class="theme-toggle" data-astro-cid-dmqpwcec> <theme-toggle data-astro-cid-x3pjskd3> <button
+								data-astro-cid-x3pjskd3> <span class="sr-only" data-astro-cid-x3pjskd3>Dark theme</span>
+								<span class="icon light" data-astro-cid-x3pjskd3><svg xmlns="http://www.w3.org/2000/svg"
+										width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"
+										stroke="currentcolor" fill="currentcolor" class="astro-patnjmll"
+										data-astro-cid-patnjmll>
+										<g data-astro-cid-patnjmll>
+											<circle cx="128" cy="128" r="60" fill="none" stroke-linecap="round"
+												stroke-linejoin="round" stroke-width="16" />
+											<path fill="none" stroke-linecap="round" stroke-linejoin="round"
+												stroke-width="16"
+												d="M128 36V16M63 63 49 49m-13 79H16m47 65-14 14m79 13v20m65-47 14 14m13-79h20m-47-65 14-14" />
+										</g>
+									</svg> </span> <span class="icon dark" data-astro-cid-x3pjskd3><svg
+										xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+										aria-hidden="true" stroke="currentcolor" fill="currentcolor"
+										class="astro-patnjmll" data-astro-cid-patnjmll>
+										<g data-astro-cid-patnjmll>
+											<path fill="none" stroke-linecap="round" stroke-linejoin="round"
+												stroke-width="16"
+												d="M216 112V64m24 24h-48m-24-64v32m16-16h-32m65 113A92 92 0 0 1 103 39h0a92 92 0 1 0 114 114Z" />
+										</g>
+									</svg> </span> </button> </theme-toggle> </div> <!-- <div class="lang-toggle">
 				<LangToggle />
-			</div> --> </div> </div> </nav>    <div class="stack gap-20 lg:gap-48" data-astro-cid-j7pv25f6> <div class="wrapper stack gap-8 lg:gap-20" data-astro-cid-j7pv25f6> <header class="hero" data-astro-cid-j7pv25f6> <div class="hero stack gap-4 start" data-astro-cid-bbe6dxrz> <div class="stack gap-2" data-astro-cid-bbe6dxrz> <h1 class="title" data-astro-cid-bbe6dxrz>Hello, my name is Alexandre Moreau</h1> <p class="tagline" data-astro-cid-bbe6dxrz>I am a Full Stack Developer who is currently based in Grenoble, France.</p> </div>  <div class="roles" data-astro-cid-j7pv25f6> <div class="pill" data-astro-cid-2qeywk4b><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.33em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m64 88-48 40 48 40m128-80 48 40-48 40M160 40 96 216"/></g>  </svg>  Developer</div>  <div class="pill" data-astro-cid-2qeywk4b><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.33em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M96 216H48a8 8 0 0 1-8-8v-44.7a7.9 7.9 0 0 1 2.3-5.6l120-120a8 8 0 0 1 11.4 0l44.6 44.6a8 8 0 0 1 0 11.4Zm40-152 56 56"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M216 216H96l-55.5-55.5M164 92l-96 96"/></g>  </svg>  Student</div>  <div class="pill" data-astro-cid-2qeywk4b><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.33em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll> version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304.515 304.515" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 304.515 304.515"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="m148.078,256.816l-25.964-18.122-10.657-1.392 15.756,56.255c2.236,7.983 10.519,12.631 18.49,10.398 7.977-2.234 12.633-10.513 10.399-18.49l-8.024-28.649z"></path> <circle cx="62.034" cy="61.041" r="25.907"></circle> <path d="m187.079,232.819l-46.337-32.342c-1.975-1.379-4.253-2.261-6.642-2.574l-59.266-7.744c2.483,5.066 10.024,17.088 0.728,30.351l51.015,6.665 43.33,30.244c6.808,4.751 16.154,3.064 20.886-3.715 4.742-6.793 3.079-16.143-3.714-20.885z"></path> <path d="m277.617,0h-179.556c-1.313,0-2.467,0.867-2.833,2.128s0.145,2.611 1.254,3.314l8.584,5.441-.975,56.237-23.316,25.842-30.97,3.172c-9.615,0.985-16.611,9.578-15.627,19.193l.912,8.902 13.95-14.214-26.716,44.352c-2.114,3.622-2.269,8.053-0.43,11.805l22.403,45.75c3.08,6.285 10.641,8.706 16.726,5.722 6.228-3.052 8.749-10.552 5.722-16.726l-19.031-38.825 23.973-41.053-10.414,37.143-.768,2.741 12.829,26.172 34.443-3.016-7.701-75.191 25.73-28.517c2.033-2.254 3.178-5.17 3.219-8.204l.612-45.104c3.917,3.635 6.836,8.259 8.415,13.433l10.505,34.42c1.42,4.654 3.935,8.9 7.333,12.382l36.043,36.93c5.928,6.074 9.052,14.346 8.62,22.822l-2.874,56.391c-0.293,5.751 1.05,11.467 3.874,16.486l25.059,44.532c3.008,5.345 7.56,9.658 13.06,12.373l35.164,17.359c1.947,0.961 4.252,0.849 6.095-0.297 1.844-1.146 2.965-3.163 2.965-5.334v-282.281c0.001-3.468-2.811-6.28-6.279-6.28z"></path> </g> </g> </g></> /></g>  </svg>  Climber</div>  </div>  </div>  <img alt="Me smiling for take a picture" width="480" height="620" src="/assets/Me.jpeg" data-astro-cid-j7pv25f6> </header> <!-- html --><section class="box skills" data-astro-cid-ab4ihpzs> <div class="stack gap-2 lg:gap-4" data-astro-cid-ab4ihpzs> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="url(#icon-gradient-1rf720ack)" fill="url(#icon-gradient-1rf720ack)" style="--size:2.5rem" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m80 96 40 32-40 32m56 0h40"/><rect width="192" height="160" x="32" y="48" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16.97" rx="8.5"/></g> <linearGradient id="icon-gradient-1rf720ack" x1="23" x2="235" y1="43" y2="202" gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll> <stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop> <stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop> <stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop> </linearGradient> </svg>  <h2 data-astro-cid-ab4ihpzs>Full Stack</h2> <p data-astro-cid-ab4ihpzs>Comfortable both in front-end and back-end development, I enjoy exploring all facets of computer sciences. Passionate about embracing diverse challenges and staying abreast of the latest technologies to create comprehensive solutions.</p> </div> <div class="stack gap-2 lg:gap-4" data-astro-cid-ab4ihpzs> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="url(#icon-gradient-31zo6m3q4)" fill="url(#icon-gradient-31zo6m3q4)" style="--size:2.5rem" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> </style> <g> <path class="st0" d="M345.934,233.32c-3.329-1.882-7.555-0.71-9.438,2.619c-1.882,3.329-0.71,7.565,2.624,9.447 c5.114,2.912,8.235,6.161,10.298,9.518c-8.54,3-16.11,4.234-22.799,4.234c-9.789-0.009-17.796-2.593-24.548-6.552 c-6.734-3.968-12.18-9.393-16.309-15.022c-6.806-9.278-15.661-17.542-26.098-23.571c-10.422-6.011-22.479-9.767-35.419-9.767 c-11.347-0.008-23.305,2.913-35.153,9.42c-4.844,2.655-9.043,5.762-12.7,9.153c-14.414,5.549-26.834,7.546-37.341,7.546 c-14.969,0-26.151-4.022-33.627-7.973c-3.733-1.971-6.525-3.933-8.332-5.353c-0.906-0.719-1.566-1.288-1.976-1.66l-0.426-0.409 l-0.067-0.062H94.62c-2.655-2.726-7.023-2.796-9.771-0.151c-2.752,2.654-2.832,7.04-0.177,9.792 c0.386,0.391,5.149,5.265,14.267,10.095c3.991,2.113,8.883,4.19,14.534,5.886c-1.501,2.113-3.551,5.202-5.784,9.135 c-4.293,7.573-9.225,18.201-11.738,30.737c-0.75,3.746,1.683,7.396,5.434,8.15c3.751,0.745,7.404-1.688,8.15-5.442 c2.108-10.556,6.414-19.94,10.205-26.608c1.891-3.338,3.645-5.993,4.906-7.778c0.63-0.896,1.136-1.58,1.474-2.024 c0.168-0.214,0.297-0.382,0.373-0.48l0.08-0.098l0.009-0.009l0.004-0.009c0.639-0.781,1.066-1.66,1.309-2.583 c3.525,0.434,7.227,0.701,11.156,0.692c7.284,0.009,15.261-0.852,23.851-2.805c-4.258,9.18-6.01,18.76-6.015,27.54 c0.017,8.843,1.7,16.869,4.701,23.261c1.637,3.463,5.77,4.936,9.228,3.303c3.458-1.634,4.936-5.771,3.298-9.224v-0.009 c-1.926-4.013-3.392-10.334-3.369-17.331c-0.005-7.546,1.624-15.856,5.531-23.438c3.928-7.582,10.028-14.498,19.479-19.701 c9.974-5.46,19.496-7.698,28.49-7.706c10.24,0,19.887,2.957,28.498,7.91c8.603,4.963,16.119,11.95,21.844,19.762 c5.038,6.872,11.778,13.655,20.452,18.769c8.656,5.114,19.284,8.478,31.58,8.469c8.136,0,16.975-1.474,26.466-4.706l0.022,0.497 c0,3.392-0.528,6.481-1.056,8.665c-0.262,1.092-0.524,1.954-0.706,2.513c-0.093,0.275-0.164,0.479-0.208,0.594l-0.04,0.107 l-0.004,0.017h0.004c-1.403,3.543,0.324,7.556,3.866,8.976c3.551,1.421,7.586-0.311,9.007-3.862 c0.177-0.497,2.966-7.413,2.992-17.011c0-5.505-0.964-11.968-4.164-18.35C359.62,244.054,354.133,237.928,345.934,233.32z"></path> <path class="st0" d="M361.382,187.056c-19.043,0-34.336-7.014-44.914-16.194c-5.278-4.581-9.336-9.704-12.003-14.604 c-2.681-4.91-3.911-9.58-3.893-13.078c0-3.827-3.103-6.925-6.929-6.925c-3.826,0-6.926,3.098-6.926,6.925 c0.018,6.516,2.055,13.193,5.58,19.692c3.689,6.766,9.078,13.335,15.928,19.123c-1.381,1.918-3.286,4.387-5.718,7.032 c-5.278,5.762-12.886,12.145-21.969,15.368c-3.604,1.287-5.482,5.256-4.194,8.851c1.287,3.605,5.252,5.488,8.852,4.199 c12.327-4.43,21.555-12.508,27.815-19.381c2.788-3.072,4.958-5.877,6.561-8.123c11.462,6.614,25.618,10.982,41.812,10.973 c3.822,0,6.93-3.098,6.93-6.925C368.311,190.164,365.204,187.056,361.382,187.056z"></path> <path class="st0" d="M315.197,322.537c-12.961,0-23.26-2.504-31.535-6.33c-12.385-5.753-20.42-14.595-25.476-23.412 c-2.521-4.395-4.261-8.771-5.358-12.616c-1.101-3.826-1.532-7.182-1.523-9.215c0-3.826-3.098-6.926-6.925-6.926 c-3.831,0-6.929,3.099-6.929,6.926c0,2.495,0.297,5.256,0.906,8.292c1.056,5.291,3.067,11.409,6.326,17.712 c4.888,9.447,12.647,19.354,24.242,26.884c2.903,1.899,6.046,3.622,9.428,5.166c0.528,2.273,1.261,6.321,1.256,11.204 c0,3.552-0.382,7.511-1.456,11.569c-1.074,4.057-2.823,8.195-5.602,12.216c-2.179,3.152-1.394,7.466,1.754,9.642 c3.148,2.175,7.462,1.394,9.638-1.749c3.782-5.469,6.178-11.151,7.608-16.567c1.434-5.424,1.913-10.582,1.913-15.111 c0-2.264-0.124-4.359-0.311-6.276c6.677,1.554,13.992,2.459,22.044,2.45c3.823,0,6.926-3.107,6.926-6.934 C322.123,325.644,319.02,322.537,315.197,322.537z"></path> <path class="st0" d="M409.302,218.468c-3.431-2.956-7.133-5.38-11.04-7.103c-3.902-1.722-8.026-2.752-12.248-2.752 c-3.826,0-6.929,3.098-6.929,6.925c0,3.836,3.103,6.934,6.929,6.934c2.548-0.009,5.771,0.879,9.158,2.841 c5.078,2.912,10.357,8.141,14.196,14.693c3.862,6.543,6.308,14.33,6.304,22.373c-0.031,8.852-2.819,18.085-10.365,27.266 c-2.437,2.956-2.02,7.315,0.932,9.756c2.948,2.433,7.316,2.016,9.753-0.932c9.508-11.472,13.565-24.194,13.534-36.09 c0-7.227-1.447-14.142-3.879-20.446C421.988,232.485,416.16,224.398,409.302,218.468z"></path> <path class="st0" d="M168.073,181.534v-0.009c4.759-5.638,11.538-10.059,19.266-13.033c7.715-2.983,16.327-4.475,24.384-4.466 c7.848-0.018,15.155,1.429,20.514,3.924c3.476,1.598,7.59,0.089,9.198-3.391c1.602-3.472,0.084-7.582-3.387-9.19 c-7.741-3.56-16.837-5.194-26.324-5.202c-9.739,0-19.901,1.758-29.365,5.388c-9.441,3.64-18.235,9.199-24.862,17.02 c-2.473,2.921-2.109,7.297,0.812,9.766C161.228,184.819,165.601,184.446,168.073,181.534z"></path> <polygon class="st0" points="481.632,161.514 481.637,161.523 481.637,161.523 "></polygon> <polygon class="st0" points="336.159,392.808 336.159,392.817 336.154,392.817 "></polygon> <path class="st0" d="M492.215,208.417c-1.225-1.243-2.539-2.424-3.87-3.586c0.696-3.88,1.1-7.831,1.1-11.844 c0.004-10.636-2.53-21.467-7.808-31.464c-6.033-11.462-14.969-20.554-25.401-26.715c-7.297-4.315-15.323-7.191-23.642-8.532 c-2.019-7.182-5.185-14.019-9.438-20.224c-7.08-10.334-17.148-18.892-29.467-24.193c-8.811-3.791-18.058-5.611-27.14-5.611 c0,0-0.28-0.009-0.79,0.036c-11.533,0.134-22.759,3.161-32.69,8.692c-3.884-4.679-8.376-8.843-13.375-12.35 c-10.956-7.697-24.353-12.261-38.687-12.403c-0.165-0.009-0.364-0.017-0.608-0.026c-0.031,0-0.062,0-0.097,0h-0.009h-0.009h-0.004 c-0.022,0-0.044,0-0.066,0c-0.133,0-0.293,0.009-0.497,0.017c-12.482,0.098-24.277,3.543-34.354,9.508 c-4.368,2.575-8.354,5.673-12.012,9.118c-10.44-6.508-22.777-10.308-35.917-10.37l-0.048-0.008h-0.311c-0.009,0-0.014,0-0.022,0 c-0.018,0-0.036,0-0.057,0c-0.16,0-0.36,0.008-0.613,0.026c-13.979,0.133-27.088,4.466-37.896,11.817 c-6.264,4.253-11.746,9.518-16.279,15.545c-5.735-1.553-11.723-2.396-17.841-2.396c-5.091,0-10.254,0.577-15.394,1.749 c-15.138,3.471-28.068,11.772-37.334,22.861h0.005c-6.503,7.768-11.195,16.93-13.77,26.812 c-9.873,3.348-19.177,8.959-26.959,16.886c-0.004,0.009-0.013,0.018-0.022,0.027c-13.051,13.308-19.621,30.718-19.616,48.004v0.026 v0.036c0,0,0,0.017,0,0.035v0.186h0.004c0.017,6.01,0.83,12.003,2.415,17.827C4.799,239.81,0.005,254.272,0,269.073 c-0.004,10.955,2.638,22.097,8.128,32.369c6.17,11.533,15.244,20.668,25.8,26.856c7.404,4.341,15.532,7.21,23.952,8.559 c4.484,12.048,12.172,22.444,22.009,30.141c11.701,9.172,26.462,14.596,42.278,14.596c1.643,0,3.281-0.052,4.918-0.177h0.04h0.022 h0.005h0.004c6.982-0.506,13.672-2.077,19.904-4.501c4.142,6.64,9.348,12.508,15.395,17.348 c11.697,9.366,26.572,14.96,42.517,15.031c0.058,0.009,0.106,0.009,0.156,0.009c0.054,0,0.106,0,0.156,0h0.009 c0.005,0,0.005,0,0.005,0h0.013h0.071c0.023,0,0.032,0,0.054,0l0.173-0.009h0.049c1.274-0.009,2.553-0.062,3.826-0.142h0.018 l0.75-0.018c5.708-0.418,11.222-1.528,16.447-3.249c6.583,9.775,15.75,18.022,27.092,23.492h-0.005 c9.57,4.616,19.78,6.827,29.8,6.827c9.756,0,19.3-2.121,28.054-6.046c12.722,13.512,30.661,21.627,49.957,21.646 c4.231,0,8.51-0.391,12.79-1.199c16.438-3.089,30.523-11.888,40.378-23.9h-0.004c6.436-7.821,11.067-17.054,13.544-27.016 c11.368-1.118,22.648-5.078,32.618-12.092c9.487-6.659,16.838-15.36,21.765-25.072c4.928-9.704,7.467-20.412,7.467-31.216 c0-7.2-1.172-14.428-3.476-21.397c5.917-4.82,11.15-10.698,15.323-17.578c6.748-11.098,9.997-23.474,9.997-35.638 C511.996,238.914,505.102,221.468,492.215,208.417z M481.277,279.744c-6.965,11.47-18.192,18.609-30.457,20.731 c-3.773,0.648-6.303,4.235-5.656,7.998c0.648,3.774,4.231,6.304,8,5.656c2.819-0.479,5.594-1.181,8.315-2.068 c2.964,6.126,4.426,12.696,4.426,19.248c0.004,7.005-1.651,13.965-4.838,20.242c-3.192,6.278-7.898,11.861-14.077,16.212 c-7.781,5.451-16.615,8.053-25.418,8.061c-0.688,0-1.376-0.053-2.064-0.088c-0.146-1.154-0.289-2.299-0.502-3.445v-0.009 c-1.518-8.035-4.643-15.386-8.936-21.769l-0.524-0.782l-0.71-0.613c-5.252-4.492-12.217-11.879-17.593-19.407 c-2.694-3.756-4.998-7.556-6.547-10.938c-1.568-3.383-2.286-6.34-2.26-8.088c0-0.781,0.116-1.305,0.245-1.66 c0.137-0.346,0.266-0.551,0.537-0.834c2.703-2.699,2.703-7.094,0-9.793c-2.708-2.707-7.094-2.707-9.798,0v-0.008 c-1.686,1.686-2.96,3.719-3.742,5.85c-0.781,2.131-1.096,4.324-1.096,6.446c0.026,4.803,1.478,9.348,3.52,13.858 c3.095,6.73,7.711,13.415,12.696,19.514c4.692,5.736,9.686,10.876,14.156,14.818c3.076,4.741,5.323,10.086,6.433,15.972 c0.466,2.477,0.723,4.936,0.759,7.306l0.004,0.036c0.005,0.32,0.009,0.631,0.009,0.95c0,10.477-3.725,20.375-10.13,28.179 c-6.415,7.796-15.44,13.442-26.124,15.457c-2.796,0.525-5.571,0.782-8.301,0.782c-14.693,0.009-28.286-7.36-36.453-19.115 c4.395-4.457,8.141-9.695,11.008-15.625c3.556-7.351,5.42-15.129,5.762-22.817c0.169-3.836-2.796-7.067-6.614-7.236 c-3.826-0.168-7.063,2.796-7.232,6.615c-0.262,5.886-1.673,11.781-4.394,17.4l-0.004,0.018c-2.904,6.019-6.97,11.053-11.804,15.04 l-0.026,0.017c-7.941,6.517-17.992,10.104-28.259,10.104c-6.472,0-13.029-1.421-19.266-4.422 c-11.551-5.576-19.572-15.43-23.119-26.758l-0.005-0.009c-1.354-4.298-2.055-8.799-2.055-13.335c0-6.472,1.421-13.024,4.434-19.292 c1.665-3.445,0.214-7.582-3.232-9.242c-3.444-1.66-7.586-0.213-9.246,3.232c-3.934,8.15-5.811,16.806-5.811,25.303 c0,4.119,0.471,8.195,1.323,12.19c-5.411,2.956-11.515,4.838-18.112,5.328h-0.013c-1.074,0.071-2.14,0.106-3.187,0.106 c-10.401,0-20.038-3.605-27.7-9.73c-6.668-5.328-11.777-12.545-14.507-20.9c4.878-4.812,8.918-10.44,11.87-16.682 c1.633-3.454,0.155-7.591-3.303-9.225c-3.458-1.634-7.591-0.16-9.225,3.303c-2.743,5.806-6.72,10.956-11.617,15.084 c-6.934,5.85-15.692,9.624-25.444,10.325h-0.014c-1.07,0.071-2.135,0.115-3.187,0.115c-22,0.009-40.777-16.22-43.947-37.971 l-0.008-0.054l-0.009-0.054c-0.169-1.029-0.289-2.113-0.369-3.231c-0.075-1.084-0.114-2.149-0.114-3.214 c0-2.806,0.262-5.549,0.758-8.221c0.693-3.765-1.793-7.378-5.557-8.08c-3.76-0.693-7.373,1.794-8.07,5.558 c-0.644,3.48-0.986,7.076-0.986,10.743l0.014,0.399c-6.228-0.693-12.274-2.672-17.69-5.85c-6.832-4.005-12.66-9.855-16.682-17.366 c-3.578-6.694-5.26-13.85-5.265-20.926c0-9.127,2.833-18.093,8.075-25.586c2.006,2.841,4.293,5.54,6.854,8.052 c5.838,5.736,12.611,9.989,19.79,12.758c3.565,1.386,7.578-0.39,8.958-3.959c1.381-3.569-0.394-7.582-3.959-8.959 c-5.478-2.122-10.618-5.344-15.08-9.73l-0.009-0.008c-3.924-3.845-6.974-8.23-9.172-12.927c-2.783-5.948-4.181-12.403-4.181-18.866 c0.004-11.249,4.208-22.426,12.691-31.1c7.213-7.342,16.292-11.64,25.728-12.927h0.009h0.009l0.026-0.009 c1.994-0.266,4-0.408,6.015-0.399c11.245,0.009,22.444,4.218,31.114,12.696c2.734,2.672,7.12,2.628,9.797-0.106 c2.677-2.734,2.628-7.12-0.106-9.793c-11.032-10.805-25.338-16.327-39.668-16.602c1.634-6.632,4.75-12.793,9.1-17.987 c6.019-7.191,14.299-12.518,24.157-14.791c3.348-0.764,6.686-1.136,9.97-1.136c5.806,0,11.449,1.154,16.664,3.267 c-1.483,5.158-2.299,10.601-2.299,16.22c0,3.826,3.103,6.925,6.929,6.925c3.826,0,6.925-3.098,6.925-6.925 c0-6.064,1.221-11.852,3.401-17.108c3.346-8.026,9.002-14.88,16.118-19.719c7.13-4.838,15.684-7.644,24.961-7.653 c13.348,0.009,25.272,5.851,33.444,15.164l0.014,0.009c6.871,7.821,11.013,18.049,11.018,29.306c0,3.826,3.098,6.925,6.929,6.925 c3.827,0,6.925-3.098,6.925-6.925c0.005-12.793-4.133-24.672-11.142-34.288c3.587-4.971,8.159-9.18,13.45-12.305 c6.623-3.915,14.312-6.152,22.586-6.152c9.504,0,18.249,2.965,25.472,8.035c7.222,5.06,12.878,12.225,16.069,20.579l-0.004-0.008 c1.883,4.945,2.917,10.263,2.921,15.874c0,3.826,3.099,6.926,6.926,6.926c3.826,0,6.929-3.099,6.929-6.926 c0-5.718-0.857-11.24-2.393-16.46c8.203-7.644,19.092-11.968,30.328-11.968c5.868,0,11.817,1.172,17.57,3.64 c8.022,3.454,14.463,8.949,19.057,15.643c4.59,6.685,7.298,14.56,7.756,22.692c0.044,0.835,0.071,1.678,0.071,2.521 c-0.005,5.868-1.164,11.809-3.631,17.562c-1.51,3.516,0.111,7.59,3.626,9.099c3.516,1.518,7.59-0.115,9.1-3.631 c2.57-5.966,4.048-12.154,4.549-18.315c6.792,0.453,13.407,2.512,19.266,5.975c6.689,3.96,12.38,9.73,16.282,17.135v0.008 c3.414,6.464,5.012,13.353,5.016,20.163c0,3.125-0.36,6.214-1.021,9.242c-4.182-1.616-8.475-2.726-12.803-3.338 c-3.787-0.533-7.288,2.105-7.821,5.904c-0.533,3.783,2.104,7.289,5.895,7.822c4.346,0.613,8.63,1.865,12.74,3.8 c0.728,1.181,1.802,2.166,3.174,2.752c0.857,0.364,1.745,0.542,2.624,0.55c2.556,1.705,4.883,3.614,6.96,5.727l-0.093-0.097 l0.111,0.115c8.296,8.381,12.788,19.701,12.784,31.233C487.749,264.571,485.672,272.518,481.277,279.744z"></path> </g> </g></svg></g> <linearGradient id="icon-gradient-31zo6m3q4" x1="23" x2="235" y1="43" y2="202" gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll> <stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop> <stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop> <stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop> </linearGradient> </svg>  <h2 data-astro-cid-ab4ihpzs>Fast-learning</h2> <p data-astro-cid-ab4ihpzs>I possess a strong ability to quickly grasp new concepts and technologies. My aptitude for fast-learning allows me to adapt swiftly to evolving industry trends and incorporate new tools and methodologies into my skill set.</p> </div> <div class="stack gap-2 lg:gap-4" data-astro-cid-ab4ihpzs> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="url(#icon-gradient-2621gtrxp)" fill="url(#icon-gradient-2621gtrxp)" style="--size:2.5rem" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><circle cx="68" cy="188" r="28" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m40 72 40 40m0-40-40 40m136 56 40 40m0-40-40 40M136 80V40h40"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m136 40 16 16c40 40 8 88-24 96"/></g> <linearGradient id="icon-gradient-2621gtrxp" x1="23" x2="235" y1="43" y2="202" gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll> <stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop> <stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop> <stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop> </linearGradient> </svg>  <h2 data-astro-cid-ab4ihpzs>Strategy-Minded</h2> <p data-astro-cid-ab4ihpzs> I possess a skill for strategic thinking. When confronted with challenges, I tend to step back and examine the broader context. This enables me to make decisions that address immediate issues while contributing to the overall success of a project. My adaptable nature ensures I can pivot when needed to stay on the right course.</p> </div> </section> <!-- css -->  </div> <main class="wrapper stack gap-20 lg:gap-48" data-astro-cid-j7pv25f6> <section class="section with-background with-cta" data-astro-cid-j7pv25f6> <header class="section-header stack gap-2 lg:gap-4" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Selected Work</h3> <p data-astro-cid-j7pv25f6>Take a look below at some of my featured work.</p> </header> <div class="gallery" data-astro-cid-j7pv25f6> <ul class="grid offset" data-astro-cid-vc5tsdmu> <li data-astro-cid-j7pv25f6> <a class="card" href="/work/my-portfolio" data-astro-cid-lgkm4u2a> <span class="title" data-astro-cid-lgkm4u2a>My Portfolio</span> <img src="/assets/my-website.webp" alt="Home page of my website" loading="lazy" decoding="async" data-astro-cid-lgkm4u2a> </a>  </li><li data-astro-cid-j7pv25f6> <a class="card" href="/work/angular-pokedex" data-astro-cid-lgkm4u2a> <span class="title" data-astro-cid-lgkm4u2a>Angular Pokedex</span> <img src="/assets/pokedex.png" alt="pokedex picture" loading="lazy" decoding="async" data-astro-cid-lgkm4u2a> </a>  </li> </ul>  </div> <div class="cta" data-astro-cid-j7pv25f6> <a href="/work/" data-astro-cid-balv45lp>
-View All
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.2em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M40 128h176m-72-72 72 72-72 72"/></g>  </svg>  </a>  </div> </section> </main> <aside data-astro-cid-rcdzuq3a> <h2 data-astro-cid-rcdzuq3a>Interested in working together?</h2> <a href="mailto:moreaualexandre2002@gmail.com" data-astro-cid-balv45lp>
-Send Me a Message
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.2em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M210.3 35.9 23.9 88.4a8 8 0 0 0-1.2 15l85.6 40.5a7.8 7.8 0 0 1 3.8 3.8l40.5 85.6a8 8 0 0 0 15-1.2l52.5-186.4a7.9 7.9 0 0 0-9.8-9.8Zm-99.4 109.2 45.2-45.2"/></g>  </svg>  </a>  </aside>  </div>  <footer data-astro-cid-sz7xmlte> <div class="group" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
-created by me with <a href="https://astro.build/" data-astro-cid-sz7xmlte>Astro</a> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.2em" class="astro-patnjmll" data-astro-cid-patnjmll> <g data-astro-cid-patnjmll><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M94.1 184.6c-11.4 33.9-56.6 33.9-56.6 33.9s0-45.2 33.9-56.6m124.5-56.5L128 173.3 82.7 128l67.9-67.9C176.3 34.4 202 34.7 213 36.3a7.8 7.8 0 0 1 6.7 6.7c1.6 11 1.9 36.7-23.8 62.4Z"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M184.6 116.7v64.6a8 8 0 0 1-2.4 5.6l-32.3 32.4a8 8 0 0 1-13.5-4.1l-8.4-41.9m11.3-101.9H74.7a8 8 0 0 0-5.6 2.4l-32.4 32.3a8 8 0 0 0 4.1 13.5l41.9 8.4"/></g>  </svg>  </p> <p data-astro-cid-sz7xmlte>&copy; 2024 Alexandre Moreau</p> </div> <p class="socials" data-astro-cid-sz7xmlte> <a href="https://www.linkedin.com/in/alexandre-moreau-aa9440221/" data-astro-cid-sz7xmlte> Linkedin</a> <a href="https://github.com/AlexandreMoreau2002" data-astro-cid-sz7xmlte> GitHub</a> <a href="https://codepen.io/Alexandre-Moreau-the-encoder" data-astro-cid-sz7xmlte> CodePen</a> </p> </footer>  </div>   </body> </html> 
+			</div> -->
+				</div>
+			</div>
+		</nav>
+		<div class="stack gap-20 lg:gap-48" data-astro-cid-j7pv25f6>
+			<div class="wrapper stack gap-8 lg:gap-20" data-astro-cid-j7pv25f6>
+				<header class="hero" data-astro-cid-j7pv25f6>
+					<div class="hero stack gap-4 start" data-astro-cid-bbe6dxrz>
+						<div class="stack gap-2" data-astro-cid-bbe6dxrz>
+							<h1 class="title" data-astro-cid-bbe6dxrz>Hello, my name is Alexandre Moreau</h1>
+							<p class="tagline" data-astro-cid-bbe6dxrz>I am a Full Stack Developer who is currently
+								based in Grenoble, France.</p>
+						</div>
+						<div class="roles" data-astro-cid-j7pv25f6>
+							<div class="pill" data-astro-cid-2qeywk4b><svg xmlns="http://www.w3.org/2000/svg" width="40"
+									height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor"
+									fill="currentcolor" style="--size:1.33em" class="astro-patnjmll"
+									data-astro-cid-patnjmll>
+									<g data-astro-cid-patnjmll>
+										<path fill="none" stroke-linecap="round" stroke-linejoin="round"
+											stroke-width="16" d="m64 88-48 40 48 40m128-80 48 40-48 40M160 40 96 216" />
+									</g>
+								</svg> Developer</div>
+							<div class="pill" data-astro-cid-2qeywk4b><svg xmlns="http://www.w3.org/2000/svg" width="40"
+									height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor"
+									fill="currentcolor" style="--size:1.33em" class="astro-patnjmll"
+									data-astro-cid-patnjmll>
+									<g data-astro-cid-patnjmll>
+										<path fill="none" stroke-linecap="round" stroke-linejoin="round"
+											stroke-width="16"
+											d="M96 216H48a8 8 0 0 1-8-8v-44.7a7.9 7.9 0 0 1 2.3-5.6l120-120a8 8 0 0 1 11.4 0l44.6 44.6a8 8 0 0 1 0 11.4Zm40-152 56 56" />
+										<path fill="none" stroke-linecap="round" stroke-linejoin="round"
+											stroke-width="16" d="M216 216H96l-55.5-55.5M164 92l-96 96" />
+									</g>
+								</svg> Student</div>
+							<div class="pill" data-astro-cid-2qeywk4b><svg xmlns="http://www.w3.org/2000/svg" width="40"
+									height="40" viewBox="0 0 256 256" aria-hidden="true" stroke="currentcolor"
+									fill="currentcolor" style="--size:1.33em" class="astro-patnjmll"
+									data-astro-cid-patnjmll>
+									<g data-astro-cid-patnjmll> version="1.1" xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 304.515 304.515" xmlns:xlink="http://www.w3.org/1999/xlink"
+										enable-background="new 0 0 304.515 304.515"><g id="SVGRepo_bgCarrier"
+											stroke-width="0"></g>
+										<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+										</g>
+										<g id="SVGRepo_iconCarrier">
+											<g>
+												<g>
+													<path
+														d="m148.078,256.816l-25.964-18.122-10.657-1.392 15.756,56.255c2.236,7.983 10.519,12.631 18.49,10.398 7.977-2.234 12.633-10.513 10.399-18.49l-8.024-28.649z">
+													</path>
+													<circle cx="62.034" cy="61.041" r="25.907"></circle>
+													<path
+														d="m187.079,232.819l-46.337-32.342c-1.975-1.379-4.253-2.261-6.642-2.574l-59.266-7.744c2.483,5.066 10.024,17.088 0.728,30.351l51.015,6.665 43.33,30.244c6.808,4.751 16.154,3.064 20.886-3.715 4.742-6.793 3.079-16.143-3.714-20.885z">
+													</path>
+													<path
+														d="m277.617,0h-179.556c-1.313,0-2.467,0.867-2.833,2.128s0.145,2.611 1.254,3.314l8.584,5.441-.975,56.237-23.316,25.842-30.97,3.172c-9.615,0.985-16.611,9.578-15.627,19.193l.912,8.902 13.95-14.214-26.716,44.352c-2.114,3.622-2.269,8.053-0.43,11.805l22.403,45.75c3.08,6.285 10.641,8.706 16.726,5.722 6.228-3.052 8.749-10.552 5.722-16.726l-19.031-38.825 23.973-41.053-10.414,37.143-.768,2.741 12.829,26.172 34.443-3.016-7.701-75.191 25.73-28.517c2.033-2.254 3.178-5.17 3.219-8.204l.612-45.104c3.917,3.635 6.836,8.259 8.415,13.433l10.505,34.42c1.42,4.654 3.935,8.9 7.333,12.382l36.043,36.93c5.928,6.074 9.052,14.346 8.62,22.822l-2.874,56.391c-0.293,5.751 1.05,11.467 3.874,16.486l25.059,44.532c3.008,5.345 7.56,9.658 13.06,12.373l35.164,17.359c1.947,0.961 4.252,0.849 6.095-0.297 1.844-1.146 2.965-3.163 2.965-5.334v-282.281c0.001-3.468-2.811-6.28-6.279-6.28z">
+													</path>
+												</g>
+											</g>
+										</g>
+										</> />
+									</g>
+								</svg> Climber</div>
+						</div>
+					</div> <img alt="Me smiling for take a picture" width="480" height="620" src="/assets/Me.jpeg"
+						data-astro-cid-j7pv25f6>
+				</header> <!-- html -->
+				<section class="box skills" data-astro-cid-ab4ihpzs>
+					<div class="stack gap-2 lg:gap-4" data-astro-cid-ab4ihpzs> <svg xmlns="http://www.w3.org/2000/svg"
+							width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"
+							stroke="url(#icon-gradient-1rf720ack)" fill="url(#icon-gradient-1rf720ack)"
+							style="--size:2.5rem" class="astro-patnjmll" data-astro-cid-patnjmll>
+							<g data-astro-cid-patnjmll>
+								<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+									d="m80 96 40 32-40 32m56 0h40" />
+								<rect width="192" height="160" x="32" y="48" fill="none" stroke-linecap="round"
+									stroke-linejoin="round" stroke-width="16.97" rx="8.5" />
+							</g>
+							<linearGradient id="icon-gradient-1rf720ack" x1="23" x2="235" y1="43" y2="202"
+								gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll>
+								<stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop>
+								<stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop>
+								<stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop>
+							</linearGradient>
+						</svg>
+						<h2 data-astro-cid-ab4ihpzs>Full Stack</h2>
+						<p data-astro-cid-ab4ihpzs>Comfortable both in front-end and back-end development, I enjoy
+							exploring all facets of computer sciences. Passionate about embracing diverse challenges and
+							staying abreast of the latest technologies to create comprehensive solutions.</p>
+					</div>
+					<div class="stack gap-2 lg:gap-4" data-astro-cid-ab4ihpzs> <svg xmlns="http://www.w3.org/2000/svg"
+							width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"
+							stroke="url(#icon-gradient-31zo6m3q4)" fill="url(#icon-gradient-31zo6m3q4)"
+							style="--size:2.5rem" class="astro-patnjmll" data-astro-cid-patnjmll>
+							<g data-astro-cid-patnjmll><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+									xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
+									xml:space="preserve">
+									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+									<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+									<g id="SVGRepo_iconCarrier">
+										<style type="text/css"> </style>
+										<g>
+											<path class="st0"
+												d="M345.934,233.32c-3.329-1.882-7.555-0.71-9.438,2.619c-1.882,3.329-0.71,7.565,2.624,9.447 c5.114,2.912,8.235,6.161,10.298,9.518c-8.54,3-16.11,4.234-22.799,4.234c-9.789-0.009-17.796-2.593-24.548-6.552 c-6.734-3.968-12.18-9.393-16.309-15.022c-6.806-9.278-15.661-17.542-26.098-23.571c-10.422-6.011-22.479-9.767-35.419-9.767 c-11.347-0.008-23.305,2.913-35.153,9.42c-4.844,2.655-9.043,5.762-12.7,9.153c-14.414,5.549-26.834,7.546-37.341,7.546 c-14.969,0-26.151-4.022-33.627-7.973c-3.733-1.971-6.525-3.933-8.332-5.353c-0.906-0.719-1.566-1.288-1.976-1.66l-0.426-0.409 l-0.067-0.062H94.62c-2.655-2.726-7.023-2.796-9.771-0.151c-2.752,2.654-2.832,7.04-0.177,9.792 c0.386,0.391,5.149,5.265,14.267,10.095c3.991,2.113,8.883,4.19,14.534,5.886c-1.501,2.113-3.551,5.202-5.784,9.135 c-4.293,7.573-9.225,18.201-11.738,30.737c-0.75,3.746,1.683,7.396,5.434,8.15c3.751,0.745,7.404-1.688,8.15-5.442 c2.108-10.556,6.414-19.94,10.205-26.608c1.891-3.338,3.645-5.993,4.906-7.778c0.63-0.896,1.136-1.58,1.474-2.024 c0.168-0.214,0.297-0.382,0.373-0.48l0.08-0.098l0.009-0.009l0.004-0.009c0.639-0.781,1.066-1.66,1.309-2.583 c3.525,0.434,7.227,0.701,11.156,0.692c7.284,0.009,15.261-0.852,23.851-2.805c-4.258,9.18-6.01,18.76-6.015,27.54 c0.017,8.843,1.7,16.869,4.701,23.261c1.637,3.463,5.77,4.936,9.228,3.303c3.458-1.634,4.936-5.771,3.298-9.224v-0.009 c-1.926-4.013-3.392-10.334-3.369-17.331c-0.005-7.546,1.624-15.856,5.531-23.438c3.928-7.582,10.028-14.498,19.479-19.701 c9.974-5.46,19.496-7.698,28.49-7.706c10.24,0,19.887,2.957,28.498,7.91c8.603,4.963,16.119,11.95,21.844,19.762 c5.038,6.872,11.778,13.655,20.452,18.769c8.656,5.114,19.284,8.478,31.58,8.469c8.136,0,16.975-1.474,26.466-4.706l0.022,0.497 c0,3.392-0.528,6.481-1.056,8.665c-0.262,1.092-0.524,1.954-0.706,2.513c-0.093,0.275-0.164,0.479-0.208,0.594l-0.04,0.107 l-0.004,0.017h0.004c-1.403,3.543,0.324,7.556,3.866,8.976c3.551,1.421,7.586-0.311,9.007-3.862 c0.177-0.497,2.966-7.413,2.992-17.011c0-5.505-0.964-11.968-4.164-18.35C359.62,244.054,354.133,237.928,345.934,233.32z">
+											</path>
+											<path class="st0"
+												d="M361.382,187.056c-19.043,0-34.336-7.014-44.914-16.194c-5.278-4.581-9.336-9.704-12.003-14.604 c-2.681-4.91-3.911-9.58-3.893-13.078c0-3.827-3.103-6.925-6.929-6.925c-3.826,0-6.926,3.098-6.926,6.925 c0.018,6.516,2.055,13.193,5.58,19.692c3.689,6.766,9.078,13.335,15.928,19.123c-1.381,1.918-3.286,4.387-5.718,7.032 c-5.278,5.762-12.886,12.145-21.969,15.368c-3.604,1.287-5.482,5.256-4.194,8.851c1.287,3.605,5.252,5.488,8.852,4.199 c12.327-4.43,21.555-12.508,27.815-19.381c2.788-3.072,4.958-5.877,6.561-8.123c11.462,6.614,25.618,10.982,41.812,10.973 c3.822,0,6.93-3.098,6.93-6.925C368.311,190.164,365.204,187.056,361.382,187.056z">
+											</path>
+											<path class="st0"
+												d="M315.197,322.537c-12.961,0-23.26-2.504-31.535-6.33c-12.385-5.753-20.42-14.595-25.476-23.412 c-2.521-4.395-4.261-8.771-5.358-12.616c-1.101-3.826-1.532-7.182-1.523-9.215c0-3.826-3.098-6.926-6.925-6.926 c-3.831,0-6.929,3.099-6.929,6.926c0,2.495,0.297,5.256,0.906,8.292c1.056,5.291,3.067,11.409,6.326,17.712 c4.888,9.447,12.647,19.354,24.242,26.884c2.903,1.899,6.046,3.622,9.428,5.166c0.528,2.273,1.261,6.321,1.256,11.204 c0,3.552-0.382,7.511-1.456,11.569c-1.074,4.057-2.823,8.195-5.602,12.216c-2.179,3.152-1.394,7.466,1.754,9.642 c3.148,2.175,7.462,1.394,9.638-1.749c3.782-5.469,6.178-11.151,7.608-16.567c1.434-5.424,1.913-10.582,1.913-15.111 c0-2.264-0.124-4.359-0.311-6.276c6.677,1.554,13.992,2.459,22.044,2.45c3.823,0,6.926-3.107,6.926-6.934 C322.123,325.644,319.02,322.537,315.197,322.537z">
+											</path>
+											<path class="st0"
+												d="M409.302,218.468c-3.431-2.956-7.133-5.38-11.04-7.103c-3.902-1.722-8.026-2.752-12.248-2.752 c-3.826,0-6.929,3.098-6.929,6.925c0,3.836,3.103,6.934,6.929,6.934c2.548-0.009,5.771,0.879,9.158,2.841 c5.078,2.912,10.357,8.141,14.196,14.693c3.862,6.543,6.308,14.33,6.304,22.373c-0.031,8.852-2.819,18.085-10.365,27.266 c-2.437,2.956-2.02,7.315,0.932,9.756c2.948,2.433,7.316,2.016,9.753-0.932c9.508-11.472,13.565-24.194,13.534-36.09 c0-7.227-1.447-14.142-3.879-20.446C421.988,232.485,416.16,224.398,409.302,218.468z">
+											</path>
+											<path class="st0"
+												d="M168.073,181.534v-0.009c4.759-5.638,11.538-10.059,19.266-13.033c7.715-2.983,16.327-4.475,24.384-4.466 c7.848-0.018,15.155,1.429,20.514,3.924c3.476,1.598,7.59,0.089,9.198-3.391c1.602-3.472,0.084-7.582-3.387-9.19 c-7.741-3.56-16.837-5.194-26.324-5.202c-9.739,0-19.901,1.758-29.365,5.388c-9.441,3.64-18.235,9.199-24.862,17.02 c-2.473,2.921-2.109,7.297,0.812,9.766C161.228,184.819,165.601,184.446,168.073,181.534z">
+											</path>
+											<polygon class="st0"
+												points="481.632,161.514 481.637,161.523 481.637,161.523 "></polygon>
+											<polygon class="st0"
+												points="336.159,392.808 336.159,392.817 336.154,392.817 "></polygon>
+											<path class="st0"
+												d="M492.215,208.417c-1.225-1.243-2.539-2.424-3.87-3.586c0.696-3.88,1.1-7.831,1.1-11.844 c0.004-10.636-2.53-21.467-7.808-31.464c-6.033-11.462-14.969-20.554-25.401-26.715c-7.297-4.315-15.323-7.191-23.642-8.532 c-2.019-7.182-5.185-14.019-9.438-20.224c-7.08-10.334-17.148-18.892-29.467-24.193c-8.811-3.791-18.058-5.611-27.14-5.611 c0,0-0.28-0.009-0.79,0.036c-11.533,0.134-22.759,3.161-32.69,8.692c-3.884-4.679-8.376-8.843-13.375-12.35 c-10.956-7.697-24.353-12.261-38.687-12.403c-0.165-0.009-0.364-0.017-0.608-0.026c-0.031,0-0.062,0-0.097,0h-0.009h-0.009h-0.004 c-0.022,0-0.044,0-0.066,0c-0.133,0-0.293,0.009-0.497,0.017c-12.482,0.098-24.277,3.543-34.354,9.508 c-4.368,2.575-8.354,5.673-12.012,9.118c-10.44-6.508-22.777-10.308-35.917-10.37l-0.048-0.008h-0.311c-0.009,0-0.014,0-0.022,0 c-0.018,0-0.036,0-0.057,0c-0.16,0-0.36,0.008-0.613,0.026c-13.979,0.133-27.088,4.466-37.896,11.817 c-6.264,4.253-11.746,9.518-16.279,15.545c-5.735-1.553-11.723-2.396-17.841-2.396c-5.091,0-10.254,0.577-15.394,1.749 c-15.138,3.471-28.068,11.772-37.334,22.861h0.005c-6.503,7.768-11.195,16.93-13.77,26.812 c-9.873,3.348-19.177,8.959-26.959,16.886c-0.004,0.009-0.013,0.018-0.022,0.027c-13.051,13.308-19.621,30.718-19.616,48.004v0.026 v0.036c0,0,0,0.017,0,0.035v0.186h0.004c0.017,6.01,0.83,12.003,2.415,17.827C4.799,239.81,0.005,254.272,0,269.073 c-0.004,10.955,2.638,22.097,8.128,32.369c6.17,11.533,15.244,20.668,25.8,26.856c7.404,4.341,15.532,7.21,23.952,8.559 c4.484,12.048,12.172,22.444,22.009,30.141c11.701,9.172,26.462,14.596,42.278,14.596c1.643,0,3.281-0.052,4.918-0.177h0.04h0.022 h0.005h0.004c6.982-0.506,13.672-2.077,19.904-4.501c4.142,6.64,9.348,12.508,15.395,17.348 c11.697,9.366,26.572,14.96,42.517,15.031c0.058,0.009,0.106,0.009,0.156,0.009c0.054,0,0.106,0,0.156,0h0.009 c0.005,0,0.005,0,0.005,0h0.013h0.071c0.023,0,0.032,0,0.054,0l0.173-0.009h0.049c1.274-0.009,2.553-0.062,3.826-0.142h0.018 l0.75-0.018c5.708-0.418,11.222-1.528,16.447-3.249c6.583,9.775,15.75,18.022,27.092,23.492h-0.005 c9.57,4.616,19.78,6.827,29.8,6.827c9.756,0,19.3-2.121,28.054-6.046c12.722,13.512,30.661,21.627,49.957,21.646 c4.231,0,8.51-0.391,12.79-1.199c16.438-3.089,30.523-11.888,40.378-23.9h-0.004c6.436-7.821,11.067-17.054,13.544-27.016 c11.368-1.118,22.648-5.078,32.618-12.092c9.487-6.659,16.838-15.36,21.765-25.072c4.928-9.704,7.467-20.412,7.467-31.216 c0-7.2-1.172-14.428-3.476-21.397c5.917-4.82,11.15-10.698,15.323-17.578c6.748-11.098,9.997-23.474,9.997-35.638 C511.996,238.914,505.102,221.468,492.215,208.417z M481.277,279.744c-6.965,11.47-18.192,18.609-30.457,20.731 c-3.773,0.648-6.303,4.235-5.656,7.998c0.648,3.774,4.231,6.304,8,5.656c2.819-0.479,5.594-1.181,8.315-2.068 c2.964,6.126,4.426,12.696,4.426,19.248c0.004,7.005-1.651,13.965-4.838,20.242c-3.192,6.278-7.898,11.861-14.077,16.212 c-7.781,5.451-16.615,8.053-25.418,8.061c-0.688,0-1.376-0.053-2.064-0.088c-0.146-1.154-0.289-2.299-0.502-3.445v-0.009 c-1.518-8.035-4.643-15.386-8.936-21.769l-0.524-0.782l-0.71-0.613c-5.252-4.492-12.217-11.879-17.593-19.407 c-2.694-3.756-4.998-7.556-6.547-10.938c-1.568-3.383-2.286-6.34-2.26-8.088c0-0.781,0.116-1.305,0.245-1.66 c0.137-0.346,0.266-0.551,0.537-0.834c2.703-2.699,2.703-7.094,0-9.793c-2.708-2.707-7.094-2.707-9.798,0v-0.008 c-1.686,1.686-2.96,3.719-3.742,5.85c-0.781,2.131-1.096,4.324-1.096,6.446c0.026,4.803,1.478,9.348,3.52,13.858 c3.095,6.73,7.711,13.415,12.696,19.514c4.692,5.736,9.686,10.876,14.156,14.818c3.076,4.741,5.323,10.086,6.433,15.972 c0.466,2.477,0.723,4.936,0.759,7.306l0.004,0.036c0.005,0.32,0.009,0.631,0.009,0.95c0,10.477-3.725,20.375-10.13,28.179 c-6.415,7.796-15.44,13.442-26.124,15.457c-2.796,0.525-5.571,0.782-8.301,0.782c-14.693,0.009-28.286-7.36-36.453-19.115 c4.395-4.457,8.141-9.695,11.008-15.625c3.556-7.351,5.42-15.129,5.762-22.817c0.169-3.836-2.796-7.067-6.614-7.236 c-3.826-0.168-7.063,2.796-7.232,6.615c-0.262,5.886-1.673,11.781-4.394,17.4l-0.004,0.018c-2.904,6.019-6.97,11.053-11.804,15.04 l-0.026,0.017c-7.941,6.517-17.992,10.104-28.259,10.104c-6.472,0-13.029-1.421-19.266-4.422 c-11.551-5.576-19.572-15.43-23.119-26.758l-0.005-0.009c-1.354-4.298-2.055-8.799-2.055-13.335c0-6.472,1.421-13.024,4.434-19.292 c1.665-3.445,0.214-7.582-3.232-9.242c-3.444-1.66-7.586-0.213-9.246,3.232c-3.934,8.15-5.811,16.806-5.811,25.303 c0,4.119,0.471,8.195,1.323,12.19c-5.411,2.956-11.515,4.838-18.112,5.328h-0.013c-1.074,0.071-2.14,0.106-3.187,0.106 c-10.401,0-20.038-3.605-27.7-9.73c-6.668-5.328-11.777-12.545-14.507-20.9c4.878-4.812,8.918-10.44,11.87-16.682 c1.633-3.454,0.155-7.591-3.303-9.225c-3.458-1.634-7.591-0.16-9.225,3.303c-2.743,5.806-6.72,10.956-11.617,15.084 c-6.934,5.85-15.692,9.624-25.444,10.325h-0.014c-1.07,0.071-2.135,0.115-3.187,0.115c-22,0.009-40.777-16.22-43.947-37.971 l-0.008-0.054l-0.009-0.054c-0.169-1.029-0.289-2.113-0.369-3.231c-0.075-1.084-0.114-2.149-0.114-3.214 c0-2.806,0.262-5.549,0.758-8.221c0.693-3.765-1.793-7.378-5.557-8.08c-3.76-0.693-7.373,1.794-8.07,5.558 c-0.644,3.48-0.986,7.076-0.986,10.743l0.014,0.399c-6.228-0.693-12.274-2.672-17.69-5.85c-6.832-4.005-12.66-9.855-16.682-17.366 c-3.578-6.694-5.26-13.85-5.265-20.926c0-9.127,2.833-18.093,8.075-25.586c2.006,2.841,4.293,5.54,6.854,8.052 c5.838,5.736,12.611,9.989,19.79,12.758c3.565,1.386,7.578-0.39,8.958-3.959c1.381-3.569-0.394-7.582-3.959-8.959 c-5.478-2.122-10.618-5.344-15.08-9.73l-0.009-0.008c-3.924-3.845-6.974-8.23-9.172-12.927c-2.783-5.948-4.181-12.403-4.181-18.866 c0.004-11.249,4.208-22.426,12.691-31.1c7.213-7.342,16.292-11.64,25.728-12.927h0.009h0.009l0.026-0.009 c1.994-0.266,4-0.408,6.015-0.399c11.245,0.009,22.444,4.218,31.114,12.696c2.734,2.672,7.12,2.628,9.797-0.106 c2.677-2.734,2.628-7.12-0.106-9.793c-11.032-10.805-25.338-16.327-39.668-16.602c1.634-6.632,4.75-12.793,9.1-17.987 c6.019-7.191,14.299-12.518,24.157-14.791c3.348-0.764,6.686-1.136,9.97-1.136c5.806,0,11.449,1.154,16.664,3.267 c-1.483,5.158-2.299,10.601-2.299,16.22c0,3.826,3.103,6.925,6.929,6.925c3.826,0,6.925-3.098,6.925-6.925 c0-6.064,1.221-11.852,3.401-17.108c3.346-8.026,9.002-14.88,16.118-19.719c7.13-4.838,15.684-7.644,24.961-7.653 c13.348,0.009,25.272,5.851,33.444,15.164l0.014,0.009c6.871,7.821,11.013,18.049,11.018,29.306c0,3.826,3.098,6.925,6.929,6.925 c3.827,0,6.925-3.098,6.925-6.925c0.005-12.793-4.133-24.672-11.142-34.288c3.587-4.971,8.159-9.18,13.45-12.305 c6.623-3.915,14.312-6.152,22.586-6.152c9.504,0,18.249,2.965,25.472,8.035c7.222,5.06,12.878,12.225,16.069,20.579l-0.004-0.008 c1.883,4.945,2.917,10.263,2.921,15.874c0,3.826,3.099,6.926,6.926,6.926c3.826,0,6.929-3.099,6.929-6.926 c0-5.718-0.857-11.24-2.393-16.46c8.203-7.644,19.092-11.968,30.328-11.968c5.868,0,11.817,1.172,17.57,3.64 c8.022,3.454,14.463,8.949,19.057,15.643c4.59,6.685,7.298,14.56,7.756,22.692c0.044,0.835,0.071,1.678,0.071,2.521 c-0.005,5.868-1.164,11.809-3.631,17.562c-1.51,3.516,0.111,7.59,3.626,9.099c3.516,1.518,7.59-0.115,9.1-3.631 c2.57-5.966,4.048-12.154,4.549-18.315c6.792,0.453,13.407,2.512,19.266,5.975c6.689,3.96,12.38,9.73,16.282,17.135v0.008 c3.414,6.464,5.012,13.353,5.016,20.163c0,3.125-0.36,6.214-1.021,9.242c-4.182-1.616-8.475-2.726-12.803-3.338 c-3.787-0.533-7.288,2.105-7.821,5.904c-0.533,3.783,2.104,7.289,5.895,7.822c4.346,0.613,8.63,1.865,12.74,3.8 c0.728,1.181,1.802,2.166,3.174,2.752c0.857,0.364,1.745,0.542,2.624,0.55c2.556,1.705,4.883,3.614,6.96,5.727l-0.093-0.097 l0.111,0.115c8.296,8.381,12.788,19.701,12.784,31.233C487.749,264.571,485.672,272.518,481.277,279.744z">
+											</path>
+										</g>
+									</g>
+								</svg></g>
+							<linearGradient id="icon-gradient-31zo6m3q4" x1="23" x2="235" y1="43" y2="202"
+								gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll>
+								<stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop>
+								<stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop>
+								<stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop>
+							</linearGradient>
+						</svg>
+						<h2 data-astro-cid-ab4ihpzs>Fast-learning</h2>
+						<p data-astro-cid-ab4ihpzs>I possess a strong ability to quickly grasp new concepts and
+							technologies. My aptitude for fast-learning allows me to adapt swiftly to evolving industry
+							trends and incorporate new tools and methodologies into my skill set.</p>
+					</div>
+					<div class="stack gap-2 lg:gap-4" data-astro-cid-ab4ihpzs> <svg xmlns="http://www.w3.org/2000/svg"
+							width="40" height="40" viewBox="0 0 256 256" aria-hidden="true"
+							stroke="url(#icon-gradient-2621gtrxp)" fill="url(#icon-gradient-2621gtrxp)"
+							style="--size:2.5rem" class="astro-patnjmll" data-astro-cid-patnjmll>
+							<g data-astro-cid-patnjmll>
+								<circle cx="68" cy="188" r="28" fill="none" stroke-linecap="round"
+									stroke-linejoin="round" stroke-width="16" />
+								<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+									d="m40 72 40 40m0-40-40 40m136 56 40 40m0-40-40 40M136 80V40h40" />
+								<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+									d="m136 40 16 16c40 40 8 88-24 96" />
+							</g>
+							<linearGradient id="icon-gradient-2621gtrxp" x1="23" x2="235" y1="43" y2="202"
+								gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll>
+								<stop stop-color="var(--gradient-stop-1)" data-astro-cid-patnjmll></stop>
+								<stop offset=".5" stop-color="var(--gradient-stop-2)" data-astro-cid-patnjmll></stop>
+								<stop offset="1" stop-color="var(--gradient-stop-3)" data-astro-cid-patnjmll></stop>
+							</linearGradient>
+						</svg>
+						<h2 data-astro-cid-ab4ihpzs>Strategy-Minded</h2>
+						<p data-astro-cid-ab4ihpzs> I possess a skill for strategic thinking. When confronted with
+							challenges, I tend to step back and examine the broader context. This enables me to make
+							decisions that address immediate issues while contributing to the overall success of a
+							project. My adaptable nature ensures I can pivot when needed to stay on the right course.
+						</p>
+					</div>
+				</section> <!-- css -->
+			</div>
+			<main class="wrapper stack gap-20 lg:gap-48" data-astro-cid-j7pv25f6>
+				<section class="section with-background with-cta" data-astro-cid-j7pv25f6>
+					<header class="section-header stack gap-2 lg:gap-4" data-astro-cid-j7pv25f6>
+						<h3 data-astro-cid-j7pv25f6>Selected Work</h3>
+						<p data-astro-cid-j7pv25f6>Take a look below at some of my featured work.</p>
+					</header>
+					<div class="gallery" data-astro-cid-j7pv25f6>
+						<ul class="grid offset" data-astro-cid-vc5tsdmu>
+							<li data-astro-cid-j7pv25f6> <a class="card" href="/work/my-portfolio"
+									data-astro-cid-lgkm4u2a> <span class="title" data-astro-cid-lgkm4u2a>My
+										Portfolio</span> <img src="/assets/my-website.webp"
+										alt="Home page of my website" loading="lazy" decoding="async"
+										data-astro-cid-lgkm4u2a> </a> </li>
+							<li data-astro-cid-j7pv25f6> <a class="card" href="/work/angular-pokedex"
+									data-astro-cid-lgkm4u2a> <span class="title" data-astro-cid-lgkm4u2a>Angular
+										Pokedex</span> <img src="/assets/pokedex.png" alt="pokedex picture"
+										loading="lazy" decoding="async" data-astro-cid-lgkm4u2a> </a> </li>
+						</ul>
+					</div>
+					<div class="cta" data-astro-cid-j7pv25f6> <a href="/work/" data-astro-cid-balv45lp>
+							View All
+							<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+								aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.2em"
+								class="astro-patnjmll" data-astro-cid-patnjmll>
+								<g data-astro-cid-patnjmll>
+									<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+										d="M40 128h176m-72-72 72 72-72 72" />
+								</g>
+							</svg> </a> </div>
+				</section>
+			</main>
+			<aside data-astro-cid-rcdzuq3a>
+				<h2 data-astro-cid-rcdzuq3a>Interested in working together?</h2> <a
+					href="mailto:moreaualexandre2002@gmail.com" data-astro-cid-balv45lp>
+					Send Me a Message
+					<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+						aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.2em"
+						class="astro-patnjmll" data-astro-cid-patnjmll>
+						<g data-astro-cid-patnjmll>
+							<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+								d="M210.3 35.9 23.9 88.4a8 8 0 0 0-1.2 15l85.6 40.5a7.8 7.8 0 0 1 3.8 3.8l40.5 85.6a8 8 0 0 0 15-1.2l52.5-186.4a7.9 7.9 0 0 0-9.8-9.8Zm-99.4 109.2 45.2-45.2" />
+						</g>
+					</svg> </a>
+			</aside>
+		</div>
+		<footer data-astro-cid-sz7xmlte>
+			<div class="group" data-astro-cid-sz7xmlte>
+				<p data-astro-cid-sz7xmlte>
+					created by me with <a href="https://astro.build/" data-astro-cid-sz7xmlte>Astro</a> <svg
+						xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 256 256"
+						aria-hidden="true" stroke="currentcolor" fill="currentcolor" style="--size:1.2em"
+						class="astro-patnjmll" data-astro-cid-patnjmll>
+						<g data-astro-cid-patnjmll>
+							<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+								d="M94.1 184.6c-11.4 33.9-56.6 33.9-56.6 33.9s0-45.2 33.9-56.6m124.5-56.5L128 173.3 82.7 128l67.9-67.9C176.3 34.4 202 34.7 213 36.3a7.8 7.8 0 0 1 6.7 6.7c1.6 11 1.9 36.7-23.8 62.4Z" />
+							<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"
+								d="M184.6 116.7v64.6a8 8 0 0 1-2.4 5.6l-32.3 32.4a8 8 0 0 1-13.5-4.1l-8.4-41.9m11.3-101.9H74.7a8 8 0 0 0-5.6 2.4l-32.4 32.3a8 8 0 0 0 4.1 13.5l41.9 8.4" />
+						</g>
+					</svg> </p>
+				<p data-astro-cid-sz7xmlte>&copy; 2024 Alexandre Moreau</p>
+			</div>
+			<p class="socials" data-astro-cid-sz7xmlte> <a
+					href="https://www.linkedin.com/in/alexandre-moreau-aa9440221/" data-astro-cid-sz7xmlte> Linkedin</a>
+				<a href="https://github.com/AlexandreMoreau2002" data-astro-cid-sz7xmlte> GitHub</a> <a
+					href="https://codepen.io/Alexandre-Moreau-the-encoder" data-astro-cid-sz7xmlte> CodePen</a> </p>
+		</footer>
+	</div>
+</body>
+
+</html>
