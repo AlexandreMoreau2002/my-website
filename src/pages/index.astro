@@ -20,11 +20,8 @@ import Skills from '../components/Skills.astro';
 const projects = (await getCollection('work'))
 	.sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+	
 ---
-
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
