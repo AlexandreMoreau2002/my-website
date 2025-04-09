@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/fr/BaseLayout.astro';
+
+import ContactCTA from '../../components/fr/ContactCTA.astro';
+import PortfolioPreview from '../../components/fr/PortfolioPreview.astro';
+import Hero from '../../components/fr/Hero.astro';
+import Grid from '../../components/fr/Grid.astro';
+
+const projects = (await getCollection('work'))
+	.filter(entry => entry.data.lang === 'fr')	
+	.sort((a:any, b:any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title="My Work | Alexandre Moreau"
+	description="Learn about my most recent projects"
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Mes Projets"
+				tagline="Découvrez ci-dessous mes projets les plus récents pour avoir un aperçu de mon expérience passée."
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					projects.map((project: any) => (
+						<li>
+							<PortfolioPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

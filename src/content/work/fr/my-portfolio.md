@@ -1,5 +1,5 @@
 ---
-title: My Portfolio
+title: Mon Portfolio
 publishDate: 2024-02-06 00:00:00
 img: /assets/my-website.webp
 img_alt: Home page of my website
@@ -11,6 +11,7 @@ tags:
   - Astro Js
   - Markdown
   - Static
+lang: "fr"
 ---
 
 ### Introduction

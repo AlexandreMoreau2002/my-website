@@ -1,15 +1,23 @@
 ---
 import Icon from './Icon.astro';
+import LangToggle from './LangToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
-// import LangToggle from './LangToggle.astro';
-import type { iconPaths } from './IconPaths';
+import type { iconPaths } from './../IconPaths';
+import generateUrl from '../../utils/generateUrl';
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Project', href: '/project/' },
-	{ label: 'About', href: '/about/' },
+const rawTextLinks = [
+	{ label: 'Accueil', path: '/' },
+	{ label: 'Projet', path: '/project/' },
+	{ label: 'Mon profil', path: '/about/' },
 ];
+
+const locale = Astro.currentLocale ?? 'fr';
+
+const textLinks = rawTextLinks.map(link => ({
+	label: link.label,
+	href: generateUrl(locale, link.path),
+}));
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
@@ -106,15 +114,28 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 				}
 			</div>
 
+			<div class="lang-toggle">
+				<LangToggle />
+			</div>
 			<div class="theme-toggle">
 				<ThemeToggle />
 			</div>
-			<!-- <div class="lang-toggle">
-				<LangToggle />
-			</div> -->
 		</div>
 	</div>
 </nav>
+
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('.nav-items a').forEach(link => {
+			link.addEventListener('click', () => {
+				console.log('Lien cliqué :', {
+					label: link.textContent?.trim(),
+					href: link.getAttribute('href'),
+				});
+			});
+		});
+	});
+</script>
 
 <script>
 	class MenuButton extends HTMLElement {

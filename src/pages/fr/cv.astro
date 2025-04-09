@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/fr/BaseLayout.astro";
+import Hero from "../../components/fr/Hero.astro";
+---
+
+<BaseLayout title="Resume | Alexandre Moreau" description="About myself">
+  <main class="wrapper">
+    <Hero title="My Resume">
+      <div class="link">
+        <a href="/about#cv" class="return">Return</a>
+        <a
+          class="cv"
+          href="/assets/my-resume.webp"
+          download="Moreau_Alexandre_resume.pdf"
+        >
+          Download CV
+        </a>
+      </div>
+      <img src="/assets/my-resume.webp" alt="my resume" />
+    </Hero>
+  </main>
+</BaseLayout>
+
+<style>
+  img {
+    margin: auto;
+    width: 80%;
+  }
+
+  a {
+    /* object */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    padding: 0.56em 2em;
+    white-space: nowrap;
+    border-radius: 999rem;
+    overflow: hidden;
+
+    /* text */
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.1;
+    color: var(--accent-text-over);
+
+    /* background colors */
+    background: var(--gradient-accent-orange);
+    box-shadow: var(--shadow-md);
+  }
+
+  .link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Overlay for hover effects. */
+  a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: background-color var(--theme-transition);
+    mix-blend-mode: overlay;
+  }
+
+  a:focus::after,
+  a:hover::after {
+    background-color: hsla(var(--gray-999-basis), 0.3);
+  }
+
+  @media (min-width: 20em) {
+    a {
+      font-size: var(--text-lg);
+    }
+  }
+
+  @media (min-width: 35em) {
+    .link {
+      gap: 4rem;
+    }
+  }
+
+  @media (min-width: 50em) {
+    a {
+      padding: 1.125rem 2.5rem;
+      font-size: var(--text-xl);
+    }
+  }
+</style>

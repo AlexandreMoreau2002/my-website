@@ -9,6 +9,7 @@ tags:
   - Personnal project
   - Front-end
   - Angular
+lang: "en"
 ---
 
 ### Introduction

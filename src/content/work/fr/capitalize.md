@@ -9,6 +9,7 @@ tags:
   - Personnal project
   - Front-end
   - Javascript
+lang: "fr"
 ---
 
 ## Capitalize
