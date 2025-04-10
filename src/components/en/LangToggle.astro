@@ -1,17 +1,30 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
-const currentLocale = Astro.currentLocale ?? 'fr';
-const enUrl = getRelativeLocaleUrl('en');
-const frUrl = getRelativeLocaleUrl('fr');
+const currentLocale = Astro.currentLocale;
 ---
 
 <lang-toggle>
-  <button onclick={`location.href='${currentLocale === 'fr' ? enUrl : frUrl}'`}>
+  <button onclick="toggleLang()">
     <span class={`icon fr ${currentLocale === 'fr' ? 'active' : ''}`}>Fr</span>
 	<span class={`icon en ${currentLocale === 'en' ? 'active' : ''}`}>En</span>
   </button>
 </lang-toggle>
+
+<script is:inline>
+  function toggleLang() {
+    const currentUrl = window.location.pathname;
+    const targetLang = currentUrl.startsWith('/en') ? 'fr' : 'en';
+
+    // Remplace uniquement le /fr ou /en de début
+    const newUrl = currentUrl.replace(/^\/(fr|en)/, '/' + targetLang);
+
+    // Optionnel : conserve query et hash
+    const fullUrl = newUrl + window.location.search + window.location.hash;
+
+    // Redirige
+    window.location.href = fullUrl;
+  }
+</script>
+
 <style>
 	button {
 		display: flex;

@@ -28,7 +28,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href="/fr/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			Alexandre Moreau
 		</a>
@@ -41,7 +41,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			</template>
 		</menu-button>
 	</div>
-	<noscript>
+	<div id="menu-content">
 		<ul class="nav-items">
 			{
 				textLinks.map(({ label, href }) => (
@@ -53,45 +53,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
-								},
-							]}
-							href={href}
-						>
-							{label}
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</noscript>
-	<noscript>
-		<div class="menu-footer">
-			<div class="socials">
-				{
-					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social">
-							<span class="sr-only">{label}</span>
-							<Icon icon={icon} />
-						</a>
-					))
-				}
-			</div>
-		</div>
-	</noscript>
-	<div id="menu-content" hidden>
-		<ul class="nav-items">
-			{
-				textLinks.map(({ label, href }) => (
-					<li>
-						<a
-							aria-current={Astro.url.pathname === href}
-							class:list={[
-								'link',
-								{
-									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== '/fr/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
 							href={href}
@@ -123,19 +85,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		</div>
 	</div>
 </nav>
-
-<script is:inline>
-	document.addEventListener('DOMContentLoaded', () => {
-		document.querySelectorAll('.nav-items a').forEach(link => {
-			link.addEventListener('click', () => {
-				console.log('Lien cliqué :', {
-					label: link.textContent?.trim(),
-					href: link.getAttribute('href'),
-				});
-			});
-		});
-	});
-</script>
 
 <script>
 	class MenuButton extends HTMLElement {
