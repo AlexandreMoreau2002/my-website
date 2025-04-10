@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/fr/BaseLayout.astro';
 
-import ContactCTA from '../../components/fr/ContactCTA.astro';
-import PortfolioPreview from '../../components/fr/PortfolioPreview.astro';
 import Hero from '../../components/fr/Hero.astro';
 import Grid from '../../components/fr/Grid.astro';
+import ContactCTA from '../../components/fr/ContactCTA.astro';
+import PortfolioPreview from '../../components/fr/PortfolioPreview.astro';
 
 const projects = (await getCollection('work'))
 	.filter(entry => entry.data.lang === 'fr')	

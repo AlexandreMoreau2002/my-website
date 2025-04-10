@@ -4,9 +4,9 @@ publishDate: 2023-01-12 00:00:00
 img: /assets/pokedex.png
 img_alt: pokedex picture
 description: |
-  My first angular project.
+  Mon premier projet Angular.
 tags:
-  - Personnal project
+  - Projet personnel
   - Front-end
   - Angular
 lang: "fr"
@@ -14,33 +14,32 @@ lang: "fr"
 
 ### Introduction
 
-As a personal project, I embarked on creating my first Angular project, the Angular Pokedex. This endeavor provided me with invaluable experience in Angular, a powerful front-end framework.
+Dans le cadre d’un projet personnel, je me suis lancé dans la création de mon tout premier projet Angular : le Pokédex Angular. Cette initiative m’a apporté une expérience précieuse avec Angular, un puissant framework front-end.
 
-### Functionality and Features I learned
+### Fonctionnalités et concepts que j’ai appris
 
-Throughout the development process, I delved into various aspects of Angular, including:
+Tout au long du développement, j’ai exploré plusieurs aspects d’Angular, notamment :
 
-* Components: Utilizing Angular's component-based architecture to create modular and reusable UI elements.
-* Templates: Employing Angular's template syntax to dynamically generate HTML based on data and logic.
-* Directives: Exploring directives to manipulate the DOM, apply styles, and control the behavior of components.
-* Pipes: Leveraging pipes to transform data within templates for presentation purposes.
-* Routes: Implementing routing to enable navigation between different views within the application.
-* Modules: Organizing the application into cohesive modules to encapsulate functionality.
-* Services: Utilizing services to share data and functionality across components.
-* Forms: Implementing Angular's powerful form handling capabilities for user input validation and management.
-* Reactive Programming: Embracing reactive programming principles with RxJS to handle asynchronous data streams.
-* HTTP Requests: Integrating HTTP requests to fetch data from external APIs and services.
+* Composants : utilisation de l’architecture basée sur les composants d’Angular pour créer des éléments d’interface modulaires et réutilisables.
+* Directives : exploration des directives pour manipuler le DOM, appliquer des styles et contrôler le comportement des composants.
+* Pipes : utilisation des pipes pour transformer les données dans les templates à des fins de présentation.
+* Routes : mise en place du routing pour permettre la navigation entre les différentes vues de l’application.
+* Modules : organisation de l’application en modules cohérents afin d’encapsuler les fonctionnalités.
+* Services : utilisation de services pour partager des données et des fonctionnalités entre les composants.
+* Formulaires : implémentation des puissantes fonctionnalités de gestion de formulaires d’Angular pour la validation et la gestion des saisies utilisateur.
+* Programmation réactive : adoption des principes de la programmation réactive avec RxJS pour gérer les flux de données asynchrones.
+* Requêtes HTTP : intégration de requêtes HTTP pour récupérer des données depuis des API et services externes.
   
-This project served as an excellent introduction to Angular, allowing me to grasp the fundamental concepts and workflows of this versatile front-end framework. Through hands-on experience and experimentation, I gained a deeper understanding of Angular's core principles and best practices.
+Ce projet a constitué une excellente introduction à Angular, me permettant d’assimiler les concepts fondamentaux et les flux de travail de ce framework front-end polyvalent. Grâce à la pratique et à l’expérimentation, j’ai approfondi ma compréhension des principes clés d’Angular ainsi que de ses bonnes pratiques.
 
-### Stack
+### Technologies utilisées
 
-For the development of this project, I utilized HTML, CSS, TypeScript, and Materialize framework for styling and UI components. Additionally, Firebase was chosen as the hosting platform for seamless deployment and hosting of the Angular Pokedex application.
+Pour le développement de ce projet, j’ai utilisé HTML, CSS, TypeScript, ainsi que le framework Materialize pour le style et les composants d’interface. De plus, Firebase a été choisi comme plateforme d’hébergement afin de faciliter le déploiement et l’hébergement de l’application Angular Pokédex.
 
-### Links
+### Liens
 
-Here are the links to the project [pokedex angular](https://pokedex-angular-58709.web.app/pokemons)
+Voici les liens vers le projet [pokedex angular](https://pokedex-angular-58709.web.app/pokemons)
 
-The tutorial by [Simon Dierny](https://www.youtube.com/watch?v=DTIYVffhJuU&t=22316s).
+Le tutoriel de [Simon Dierny](https://www.youtube.com/watch?v=DTIYVffhJuU&t=22316s).
 
-And the github repository [github/pokedex-angular](https://github.com/AlexandreMoreau2002/Pokedex-angular).
+Et le dépôt GitHub [github/pokedex-angular](https://github.com/AlexandreMoreau2002/Pokedex-angular).
