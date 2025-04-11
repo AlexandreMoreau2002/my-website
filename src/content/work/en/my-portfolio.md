@@ -11,6 +11,7 @@ tags:
   - Astro Js
   - Markdown
   - Static
+  - Server side rendering (ssr)
 lang: "en"
 ---
 

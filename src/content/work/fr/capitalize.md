@@ -2,11 +2,11 @@
 title: Capitalize
 publishDate: 2024-05-29 00:00:00
 img: /assets/capitalize.png
-img_alt: capitalize picture
+img_alt: capitalize image
 description: |
-  Little website for convert text
+  Petit site pour convertir du texte
 tags:
-  - Personnal project
+  - Projet personnel
   - Front-end
   - Javascript
 lang: "fr"
@@ -16,34 +16,35 @@ lang: "fr"
 
 ## Introduction
 
-As a personal project, I created a web application that allows users to convert text to lowercase or uppercase and copy the result to the clipboard. This project provided me with valuable experience in HTML, CSS, and JavaScript, enhancing my skills in front-end web development.
+Dans le cadre d’un projet personnel, j’ai créé une application web permettant aux utilisateurs de convertir du texte en minuscules ou majuscules, puis de copier le résultat dans le presse-papiers. Ce projet m’a permis d’acquérir une expérience précieuse en HTML, CSS et JavaScript, renforçant ainsi mes compétences en développement front-end.
 
-## Functionality and Features
+## Fonctionnalités et concepts abordés
 
-Throughout the development process, I explored various web development concepts, including:
+Tout au long du développement, j’ai exploré divers concepts liés au développement web, notamment :
 
-* **HTML and CSS**: Structuring and styling the web page to create a user-friendly interface.
-* **JavaScript**: Implementing functionality to convert text and handle clipboard operations.
-* **DOM Manipulation**: Using JavaScript to dynamically update the content of the web page based on user input.
-* **Event Handling**: Managing user interactions such as button clicks.
-* **Notifications**: Displaying notifications to inform users about successful or failed actions.
-* **Responsive Design**: Ensuring the application is usable across different devices and screen sizes.
+* **HTML et CSS** : structuration et mise en forme de la page web pour créer une interface conviviale.
+* **JavaScript** : implémentation des fonctionnalités de conversion de texte et de gestion du presse-papiers.
+* **Manipulation du DOM** : mise à jour dynamique du contenu de la page en fonction des interactions de l’utilisateur.
+* **Gestion des événements** : prise en charge des interactions utilisateur comme les clics sur les boutons.
+* **Notifications** : affichage de messages pour informer l’utilisateur des actions réussies ou échouées.
+* **Design responsive** : adaptation de l’interface à différents types d’appareils et tailles d’écran.
 
-## Deployment and CI/CD
+## Déploiement et CI/CD
 
-To streamline the deployment process and ensure that the application can be easily updated with new features or bug fixes, I implemented Continuous Integration and Continuous Deployment (CI/CD) using GitHub Actions. This setup automatically deploys updates to GitHub Pages whenever changes are pushed to the main branch, ensuring that the latest version of the application is always available to users.
+Pour simplifier le déploiement et permettre des mises à jour faciles, j’ai mis en place une intégration et un déploiement continus (CI/CD) via GitHub Actions. Ce système déploie automatiquement les mises à jour sur GitHub Pages à chaque push sur la branche principale, garantissant ainsi que la dernière version de l’application est toujours disponible.
 
-## Stack
+## Stack technique
 
-For the development of this project, I utilized HTML, CSS, and JavaScript. Additionally, GitHub Pages was chosen as the hosting platform for seamless deployment and hosting of the application.
+Pour le développement de ce projet, j’ai utilisé HTML, CSS et JavaScript. GitHub Pages a été choisi comme plateforme d’hébergement pour un déploiement fluide et sans friction.
 
-## Links
+## Liens
 
-Here are the links to the project:
+Voici les liens vers le projet :
 
-**Live Application**: [Text Converter](https://alexandremoreau2002.github.io/capitalize/)
-**GitHub Repository**: [GitHub Repository](https://github.com/AlexandreMoreau2002/capitalize)
+**Application en ligne** : [Text Converter](https://alexandremoreau2002.github.io/capitalize/)
+
+**Dépôt GitHub** : [GitHub Repository](https://github.com/AlexandreMoreau2002/capitalize)
 
 ## Conclusion
 
-This project served as an excellent introduction to front-end web development, allowing me to grasp the fundamental concepts and workflows of HTML, CSS, and JavaScript. Through hands-on experience and experimentation, I gained a deeper understanding of web development principles and best practices, as well as how to implement CI/CD pipelines to automate deployment.
+Ce projet a constitué une excellente introduction au développement web front-end. Il m’a permis d’assimiler les concepts fondamentaux de HTML, CSS et JavaScript, tout en expérimentant des pratiques concrètes comme la mise en place d’un pipeline CI/CD pour automatiser le déploiement. Il a renforcé ma compréhension des principes de base et des bonnes pratiques du développement web.

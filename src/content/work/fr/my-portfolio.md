@@ -2,36 +2,38 @@
 title: Mon Portfolio
 publishDate: 2024-02-06 00:00:00
 img: /assets/my-website.webp
-img_alt: Home page of my website
+img_alt: Page d'accueil de mon site
 description: |
-  As every good developer, here's my portfolio to briefly introduce myself and to contact me!
+  Comme tout bon développeur, voici mon portfolio pour me présenter brièvement et permettre de me contacter !
 tags:
   - Portfolio
   - Front-end
   - Astro Js
   - Markdown
-  - Static
+  - Statique
+  - Server side rendering (ssr)
 lang: "fr"
 ---
 
 ### Introduction
 
-As a passionate developer, it was essential for me to have my own website. My goal was clear: present my projects in a professional and efficient manner, while launching the site quickly.
+En tant que développeur passionné, il était essentiel pour moi d’avoir mon propre site web. Mon objectif était clair : présenter mes projets de manière professionnelle et efficace, tout en mettant le site en ligne rapidement.
 
-### Stack
+### Stack technique
 
-For its development, I chose to turn to Astro technology for several fundamental reasons. First of all, Astro is based on the principle of Markdown files, which offers great flexibility in content management. Using Markdown, I can easily update and organize my projects, experiences and skills in a clear and structured way, without having to deal with complex programming languages.
+Pour son développement, j’ai choisi de me tourner vers la technologie Astro pour plusieurs raisons fondamentales. Tout d’abord, Astro repose sur le principe des fichiers Markdown, ce qui offre une grande flexibilité dans la gestion du contenu. Grâce à Markdown, je peux facilement mettre à jour et organiser mes projets, expériences et compétences de façon claire et structurée, sans avoir à manipuler des langages de programmation complexes.
 
-Additionally, Astro is a static content-oriented technology, which means my portfolio benefits from fast loading speed, strong security, and excellent SEO performance. By avoiding databases and dynamic queries, my site is lighter, more reliable and easier to host, ensuring an optimal user experience for all visitors.
+De plus, Astro est orienté contenu statique, ce qui signifie que mon portfolio bénéficie d’un chargement rapide, d’une sécurité renforcée et de très bonnes performances SEO. En évitant les bases de données et les requêtes dynamiques, mon site est plus léger, plus fiable et plus simple à héberger, garantissant une expérience optimale pour tous les visiteurs.
 
-By choosing to use this technology for the creation of my portfolio, I am focusing on efficiency, simplicity and robustness. It allows me to highlight my achievements in a professional and engaging manner, while providing a smooth and intuitive navigation experience to my visitors.
+En choisissant cette technologie pour créer mon portfolio, je mise sur l’efficacité, la simplicité et la robustesse. Elle me permet de mettre en valeur mes réalisations de façon professionnelle et engageante, tout en offrant une navigation fluide et intuitive à mes visiteurs.
 
-On the tech side, I used the fundamentals of web development using HTML, CSS and TypeScript to ensure the structure, style and interactivity of my portfolio. These well-established languages provide a solid foundation for creating a smooth and engaging user experience.
+Côté technique, j’ai utilisé les fondamentaux du développement web avec HTML, CSS et TypeScript pour assurer la structure, le style et l’interactivité de mon portfolio. Ces langages bien établis offrent une base solide pour créer une expérience utilisateur fluide et attractive.
 
-Additionally, I integrated the use of Markdown for managing static content files. This proved to be a wise choice because Markdown offers a simple and intuitive syntax for writing content, making it easy to create and update pages without having to deal with complex HTML code.
+J’ai également intégré l’usage du Markdown pour gérer les fichiers de contenu statique. Ce choix s’est révélé judicieux car Markdown propose une syntaxe simple et intuitive pour écrire du contenu, facilitant la création et la mise à jour des pages sans avoir à manipuler de code HTML complexe.
 
-For hosting, I opted for Firebase for its free, easy to use and efficient solution. Using their platform, I was able to upload my portfolio quickly and hassle-free, while enjoying reliable performance and seamless integration with my favorite development tools.
+Pour l’hébergement, j’ai opté pour Firebase, une solution gratuite, facile à utiliser et efficace. En utilisant leur plateforme, j’ai pu mettre en ligne mon portfolio rapidement et sans difficulté, tout en profitant de bonnes performances et d’une intégration fluide avec mes outils de développement préférés.
 
-### Link
+### Lien
 
-This is the link to the github repository [github/my-website](https://github.com/AlexandreMoreau2002/my-website)
+Voici le lien vers le dépôt GitHub du projet : [github/my-website](https://github.com/AlexandreMoreau2002/my-website)
+
