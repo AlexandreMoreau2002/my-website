@@ -41,7 +41,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			</template>
 		</menu-button>
 	</div>
-	<div id="menu-content">
+	<div id="menu-content" class="menu-content" hidden>
 		<ul class="nav-items">
 			{
 				textLinks.map(({ label, href }) => (
@@ -98,8 +98,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			// Hide menu (shown by default to support no-JS browsers).
 			const menu = document.getElementById('menu-content')!;
 			menu.hidden = true;
-			// Add "menu-content" class in JS to avoid covering content in non-JS browsers.
-			menu.classList.add('menu-content');
 
 			/** Set whether the menu is currently expanded or collapsed. */
 			const setExpanded = (expand: boolean) => {

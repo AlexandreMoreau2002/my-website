@@ -13,14 +13,9 @@ const currentLocale = Astro.currentLocale;
   function toggleLang() {
     const currentUrl = window.location.pathname;
     const targetLang = currentUrl.startsWith('/en') ? 'fr' : 'en';
-
-    // Remplace uniquement le /fr ou /en de début
     const newUrl = currentUrl.replace(/^\/(fr|en)/, '/' + targetLang);
-
-    // Optionnel : conserve query et hash
     const fullUrl = newUrl + window.location.search + window.location.hash;
 
-    // Redirige
     window.location.href = fullUrl;
   }
 </script>
