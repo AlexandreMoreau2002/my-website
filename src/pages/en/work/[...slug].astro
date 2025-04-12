@@ -17,7 +17,6 @@ interface Props {
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
 	const work = await getCollection('work');
-	console.log(work.map(w => w.slug));
 	return work.map((entry: any) => ({
 		params: { slug: entry.slug },
 		props: { entry },
@@ -88,8 +87,10 @@ const { Content } = await entry.render();
 	}
 
 	.content {
-		max-width: 65ch;
+		width: 100%;
+		max-width: clamp(30rem, 80%, 100ch);
 		margin-inline: auto;
+		padding-inline: 1rem;
 	}
 
 	.content > :global(* + *) {

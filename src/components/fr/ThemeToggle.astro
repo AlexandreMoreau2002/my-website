@@ -68,28 +68,15 @@ import Icon from './Icon.astro';
 </style>
 
 <script>
-	// création d'une class (objet) pour changer le thème du site.
-	// extends HTMLElement = la classe herite de l'objet HTMLElement qui permettra de créer une balise html selon les paramètres des balises classiques
 	class ThemeToggle extends HTMLElement {
-		// fonction qui pose le squelette de l'objet qui suit
 		constructor() {
-			// fonction qui appel le constructeur du parent de l'objet (htmlelement)
 			super();
-
-			//on créer une variable pour stocker le bouton html
 			const button = this.querySelector('button')!;
-
-			// on créer une fonction anonyme fléché stocker dans la variable setTheme avec comme argument booléen dark. 
 			const setTheme = (dark: boolean) => {
-				// si un element dark est présent dans la liste des classes alors : soit add soit remove ('theme-dark')
-				document.documentElement.classList[dark ? 'add' : 'remove']/**operateur ternaire condition ? actionSiTrue : actionSiFalse **/('theme-dark');
-				// applique l'attribut aria-pressed a la valeur en chaine de caractère de dark 
+				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
 				button.setAttribute('aria-pressed', String(dark));
 
-				// console.log('Le thème est actuellement:', dark ? 'dark' : 'clair');
 			};
-
-			// ecouteur d'evenement qui applique la fonction setTheme avec comme paramètre 
 			button.addEventListener('click', () => setTheme(!this.isDark()));
 
 
@@ -100,6 +87,5 @@ import Icon from './Icon.astro';
 			return document.documentElement.classList.contains('theme-dark');
 		}
 	}
-	// créer une classe sur la balise html qui peut etre utiliser par la suite.
 	customElements.define('theme-toggle', ThemeToggle);
 </script>

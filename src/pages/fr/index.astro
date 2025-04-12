@@ -1,25 +1,22 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../../layouts/fr/BaseLayout.astro';
 
-// Component Imports
-import CallToAction from '../../components/fr/CallToAction.astro';
 import Grid from '../../components/fr/Grid.astro';
 import Hero from '../../components/fr/Hero.astro';
 import Icon from '../../components/fr/Icon.astro';
 import Pill from '../../components/fr/Pill.astro';
+import Skills from '../../components/fr/Skills.astro';
+import ContactCTA from '../../components/fr/ContactCTA.astro';
+import CallToAction from '../../components/fr/CallToAction.astro';
 import PortfolioPreview from '../../components/fr/PortfolioPreview.astro';
 
-// Page section components
-import ContactCTA from '../../components/fr/ContactCTA.astro';
-import Skills from '../../components/fr/Skills.astro';
+type WorkEntry = CollectionEntry<'work'>;
 
-// Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
-	.filter(entry => entry.data.lang === 'fr')
-	.sort((a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.filter((entry: WorkEntry) => entry.data.lang === 'fr')
+	.sort((a: WorkEntry, b: WorkEntry) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 	
 ---

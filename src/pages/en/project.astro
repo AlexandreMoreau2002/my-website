@@ -1,16 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
-import BaseLayout from '../../layouts/en/BaseLayout.astro';
 
 import Hero from '../../components/en/Hero.astro';
 import Grid from '../../components/en/Grid.astro';
+import BaseLayout from '../../layouts/en/BaseLayout.astro';
 import ContactCTA from '../../components/en/ContactCTA.astro';
 import PortfolioPreview from '../../components/en/PortfolioPreview.astro';
 
+type WorkEntry = CollectionEntry<'work'>;
+
 const projects = (await getCollection('work'))
-	.filter(entry => entry.data.lang === 'en')
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+	.filter((entry: WorkEntry) => entry.data.lang === 'en')
+	.sort((a: WorkEntry, b: WorkEntry) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
 <BaseLayout

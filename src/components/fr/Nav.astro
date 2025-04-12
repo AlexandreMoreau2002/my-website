@@ -3,23 +3,13 @@ import Icon from './Icon.astro';
 import LangToggle from './LangToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import type { iconPaths } from './../IconPaths';
-import generateUrl from '../../utils/generateUrl';
 
-/** Main menu items */
-const rawTextLinks = [
-	{ label: 'Accueil', path: '/' },
-	{ label: 'Projet', path: '/project/' },
-	{ label: 'Mon profil', path: '/about/' },
+const textLinks: { label: string; href: string }[] = [
+	{ label: 'Accueil', href: '/fr/' },
+	{ label: 'Projet', href: '/fr/project/' },
+	{ label: 'Mon profil', href: '/fr/about/' },
 ];
 
-const locale = Astro.currentLocale ?? 'fr';
-
-const textLinks = rawTextLinks.map(link => ({
-	label: link.label,
-	href: generateUrl(locale, link.path),
-}));
-
-/** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
 	{ label: 'Linkdin', href: 'https://www.linkedin.com/in/alexandre-moreau-aa9440221/', icon: 'linkedin-logo'},
 	{ label: 'GitHub', href: 'https://github.com/AlexandreMoreau2002', icon: 'github-logo' },
@@ -239,7 +229,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		color: var(--accent-text-over);
 	}
 
-	.theme-toggle {
+	.theme-toggle, .lang-toggle {
 		display: flex;
 		align-items: center;
 		height: calc(var(--icon-size) + 2 * var(--icon-padding));

@@ -1,24 +1,22 @@
 ---
 const currentLocale = Astro.currentLocale;
 ---
+<script is:inline>	
+	function toggleLang() {
+		const currentUrl = window.location.pathname;
+		const targetLang = currentUrl.startsWith('/en') ? 'fr' : 'en';
+		const newUrl = currentUrl.replace(/\/(fr|en)\//g, `/${targetLang}/`);
+		const fullUrl = newUrl + window.location.search + window.location.hash;
+		window.location.href = fullUrl;
+	}
+</script>
 
 <lang-toggle>
-  <button onclick="toggleLang()">
-    <span class={`icon fr ${currentLocale === 'fr' ? 'active' : ''}`}>Fr</span>
-	<span class={`icon en ${currentLocale === 'en' ? 'active' : ''}`}>En</span>
-  </button>
+	<button onclick="toggleLang()">
+		<span class={`icon fr ${currentLocale === 'fr' ? 'active' : ''}`}>Fr</span>
+		<span class={`icon en ${currentLocale === 'en' ? 'active' : ''}`}>En</span>
+	</button>
 </lang-toggle>
-
-<script is:inline>
-  function toggleLang() {
-    const currentUrl = window.location.pathname;
-    const targetLang = currentUrl.startsWith('/en') ? 'fr' : 'en';
-    const newUrl = currentUrl.replace(/^\/(fr|en)/, '/' + targetLang);
-    const fullUrl = newUrl + window.location.search + window.location.hash;
-
-    window.location.href = fullUrl;
-  }
-</script>
 
 <style>
 	button {
