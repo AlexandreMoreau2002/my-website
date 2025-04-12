@@ -33,14 +33,16 @@ const currentLocale = Astro.currentLocale;
 	}
 
 	.icon {
-		z-index: 1;
+		font-family: var(--font-brand);
+		color: var(--accent-overlay);
+		font-size: 0.9rem;
+		font-weight: 500;
 		position: relative;
 		display: flex;
 		padding: 0.5rem;
 		width: 2rem;
 		height: 2rem;
-		font-size: 0.9rem;
-		color: var(--accent-overlay);
+		z-index: 1;
 	}
 
     .icon.en {
@@ -60,6 +62,10 @@ const currentLocale = Astro.currentLocale;
 	.icon.en,
 	.icon.fr {
 		color: var(--accent-text-over);
+	}
+
+	:global(html:not(.theme-dark)) .icon:not(.active) {
+		color: var(--accent-regular);
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
