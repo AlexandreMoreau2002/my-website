@@ -1,7 +1,7 @@
 ---
 title: My Portfolio
 publishDate: 2024-02-06 00:00:00
-img: /assets/my-website.webp
+img: /assets/my-website-en.png
 img_alt: Home page of my website
 description: |
   As every good developer, here's my portfolio to briefly introduce myself and to contact me!
