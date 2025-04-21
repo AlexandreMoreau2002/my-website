@@ -56,10 +56,13 @@ const currentLocale = Astro.currentLocale;
 		border-radius: 999rem;
 		transition: transform 0.3s ease, background-color 0.3s ease;
 	}
-
-	.icon.en,
-	.icon.fr {
+	
+	.icon.active {
 		color: var(--accent-text-over);
+	}
+
+	.icon:not(.active) {
+		color: var(--accent-overlay);
 	}
 
 	:global(html:not(.theme-dark)) .icon:not(.active) {
