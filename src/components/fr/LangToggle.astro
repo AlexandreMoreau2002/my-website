@@ -13,8 +13,8 @@ const currentLocale = Astro.currentLocale;
 
 <lang-toggle>
   <button onclick="toggleLang()">
+	  <span class={`icon en ${currentLocale === 'en' ? 'active' : ''}`}>En</span>
     <span class={`icon fr ${currentLocale === 'fr' ? 'active' : ''}`}>Fr</span>
-	<span class={`icon en ${currentLocale === 'en' ? 'active' : ''}`}>En</span>
   </button>
 </lang-toggle>
 
