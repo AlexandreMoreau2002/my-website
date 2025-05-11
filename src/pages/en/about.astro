@@ -336,6 +336,10 @@ import Hero from '../../components/en/Hero.astro'
     color: var(--gray-200);
   }
 
+  section > .cv {
+    grid-column: 2;
+  }
+
   .section-title {
     grid-column-start: 1;
     font-size: var(--text-xl);
@@ -378,28 +382,29 @@ import Hero from '../../components/en/Hero.astro'
     font-size: var(--text-lg);
   }
 
-  .cv {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    grid-column: 2;
-  }
-
-  .cv-btn {
-    height: fit-content;
-    font-size: var(--text-xl);
-    font-weight: 600;
-
-    text-align: center;
-    color: var(--accent-text-over);
-    text-decoration: none;
-    border-radius: 999rem;
-    background: var(--gradient-accent-orange);
-  }
-
   .cv-img {
     margin-top: 0;
     width: 100%;
+  }
+
+  .cv-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    margin: 2.5rem auto;
+    padding: 0.56em 2em;
+    white-space: nowrap;
+    border-radius: 999rem;
+    overflow: hidden;
+
+    text-align: center;
+    text-decoration: none !important;
+    line-height: 1.1;
+    color: var(--accent-text-over);
+
+    background: var(--gradient-accent-orange);
+    box-shadow: var(--shadow-md);
   }
 
   .cv-btn::after {
@@ -409,6 +414,11 @@ import Hero from '../../components/en/Hero.astro'
     pointer-events: none;
     transition: background-color var(--theme-transition);
     mix-blend-mode: overlay;
+  }
+
+  .cv-btn:focus::after,
+  .cv-btn:hover::after {
+    background-color: hsla(var(--gray-999-basis), 0.3);
   }
 
   @media (min-width: 20em) {
@@ -430,6 +440,11 @@ import Hero from '../../components/en/Hero.astro'
     section {
       display: contents;
       font-size: var(--text-lg);
+    }
+
+    .cv-btn {
+      padding: 1.125rem 2.5rem;
+      font-size: var(--text-xl);
     }
   }
 </style>
