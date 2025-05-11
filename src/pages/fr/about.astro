@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../../layouts/fr/BaseLayout.astro";
-import Icon from "../../components/fr/Icon.astro";
-import ContactCTA from "../../components/fr/ContactCTA.astro";
-import Hero from "../../components/fr/Hero.astro";
+import BaseLayout from '../../layouts/fr/BaseLayout.astro'
+import Icon from '../../components/fr/Icon.astro'
+import ContactCTA from '../../components/fr/ContactCTA.astro'
+import Hero from '../../components/fr/Hero.astro'
 ---
 
 <BaseLayout title="About | Alexandre Moreau" description="About myself">
@@ -12,30 +12,50 @@ import Hero from "../../components/fr/Hero.astro";
         title="À propos de moi"
         tagline="Merci de votre visite. Lisez ci-dessous pour en savoir plus sur moi et mon parcours."
       >
-        <img width="1000" height="1000" src="/assets/ProfilePicture.jpeg" alt="me" />
+        <img
+          width="1000"
+          height="1000"
+          src="/assets/ProfilePicture.jpeg"
+          alt="me"
+        />
       </Hero>
 
       <section>
         <h2 class="section-title">Présentation</h2>
         <div class="content">
           <p>
-            Développeur full stack basé à Grenoble, passionné par le web, le code propre et la progression continue. Curieux, rigoureux et motivé, j’aime comprendre les choses en profondeur et monter en compétence à chaque étape.
+            Développeur full stack basé à Grenoble, passionné par le web, le
+            code propre et la progression continue. Curieux, rigoureux et
+            motivé, j’aime comprendre les choses en profondeur et monter en
+            compétence à chaque étape.
           </p>
           <br />
           <p>
-            Après quelques années dans le monde de l’escalade, j’ai choisi de me reconvertir dans le développement web. Ce n’était pas un virage, mais l’exploration d’un univers qui m’a toujours attiré : celui de la création, de la logique, et de la résolution de problèmes concrets.
+            Après quelques années dans le monde de l’escalade, j’ai choisi de me
+            reconvertir dans le développement web. Ce n’était pas un virage,
+            mais l’exploration d’un univers qui m’a toujours attiré : celui de
+            la création, de la logique, et de la résolution de problèmes
+            concrets.
           </p>
           <br />
           <p>
-            Aujourd’hui, je travaille chez Thomyris sur un projet complet de gestion de messagerie avec détection anti-spam et antivirus. Le back est exigeant (multi-tenant, filtrage, CI/CD), le front soigné (Vue, Nuxt) — un vrai terrain d’apprentissage et de structuration.
+            Aujourd’hui, je travaille chez Thomyris sur un projet complet de
+            gestion de messagerie avec détection anti-spam et antivirus. Le back
+            est exigeant (multi-tenant, filtrage, CI/CD), le front soigné (Vue,
+            Nuxt) — un vrai terrain d’apprentissage et de structuration.
           </p>
           <br />
           <p>
-            En parallèle, je continue à me former sérieusement : Python, algorithmique, bonnes pratiques de dev, architecture logicielle, etc. Je progresse ligne après ligne, entre documentation, pratique, et projets personnels.
+            En parallèle, je continue à me former sérieusement : Python,
+            algorithmique, bonnes pratiques de dev, architecture logicielle,
+            etc. Je progresse ligne après ligne, entre documentation, pratique,
+            et projets personnels.
           </p>
           <br />
           <p>
-            J'avance avec exigence, constance et enthousiasme — toujours en quête de compréhension, de rigueur, et de sens dans ce que je développe.
+            J'avance avec exigence, constance et enthousiasme — toujours en
+            quête de compréhension, de rigueur, et de sens dans ce que je
+            développe.
           </p>
         </div>
       </section>
@@ -48,12 +68,10 @@ import Hero from "../../components/fr/Hero.astro";
               <Icon icon="html" size="3em" />
               <p>Html</p>
             </span>
-
             <span>
               <Icon icon="css" size="3em" />
               <p>Css</p>
             </span>
-
             <span>
               <Icon icon="js" size="3em" />
               <p>Javascript</p>
@@ -139,7 +157,7 @@ import Hero from "../../components/fr/Hero.astro";
         <h2 class="section-title">Formation</h2>
         <div class="content">
           <p>
-              Bac +2 Développeur Web / Web Mobile (Titre professionnel RNCP37674)
+            Bac +2 Développeur Web / Web Mobile (Titre professionnel RNCP37674)
           </p>
         </div>
       </section>
@@ -162,99 +180,143 @@ import Hero from "../../components/fr/Hero.astro";
           </span>
         </div>
       </section>
-
       <section>
-        <h2 class="section-title">Parcours
-        </h2>
+        <h2 class="section-title">Parcours</h2>
         <div class="content">
           <div class="background">
             <h3>Développeur FullStack | <i>Thomyris Chambéry</i></h3>
             <p>10.2024 – Aujourd’hui</p>
             <ul>
-              <li>Développement d'une application SaaS à destination des entreprises du réseau et aux clients finaux, intégrant une gestion avancée de serveurs de messagerie dans un environnement multi-tenant à bases de données multiples.</li>
-              <li>Mise en place de systèmes de filtrage anti-spam et anti-virus, avec une interface responsive et compatible multi-navigateurs (Chrome, Edge, Safari).</li>
-              <li>Conception et développement d’applications web robustes et scalables avec Vue.js, Nuxt 3 et Laravel.</li>
-              <li>Implémentation et optimisation d’APIs REST avec MySQL, tests effectués via REST Client.</li>
-              <li>Rédaction et exécution de tests unitaires, automatisés et end-to-end (Vitest, Cypress) pour assurer la qualité du code.</li>
-              <li>Amélioration des pipelines CI/CD sous GitLab dans un environnement Dockerisé, en collaboration avec l’équipe DevOps.</li>
-              <li>Pratique quotidienne des méthodologies Agile : participation aux stand-ups, sprint reviews et rétrospectives ; suivi des tâches via GitLab, Jira et Teams.</li>
-              <li>Expérience en pair programming et code review, avec une forte culture d’amélioration continue.</li>
-              <li>Veille technologique régulière sur Vue.js, Laravel, DevOps, Ia et les bonnes pratiques de développement moderne.</li>
-              <li>Contribution au développement du front-end d’un outil interne de monitoring en React et GraphQL pour le suivi en temps réel des nouveaux clients, de l’état des infrastructures, des KPIs et des tickets support produit.</li>
-            </ul>
-          </div>
-            <h3>Étudiant DevOps | <i>EPSI Grenoble</i></h3>
-            <p>09.2023 - 12.2023</p>
-            <p>Thèmes et compétences étudiés :</p>
-            <ul>
-              <li>Conception et test de solutions applicatives</li>
-              <li>Administration et conception de solutions d’infrastructure</li>
-              <li>Gestion des données et des projets avec une approche DevOps</li>
-              <li>Communication et veille technologique</li>
-              <li>Développement professionnel et compétences interpersonnelles (soft skills)</li>
-            </ul>
-          </div>
-          <div class="content">
-            <h3>Développeur Web FullStack | <i>Stage</i></h3>
-            <p>Création complète d’un site web pour un groupe de musique</p>
-            <p>04.2023 – 06.2023</p>
-            <ul>
               <li>
-                Utilisation de React.js et Node.js pour le développement front-end et back-end, Git et Notion pour la gestion de projet, et Figma pour la conception de la maquette.
+                Développement d'une application SaaS à destination des
+                entreprises du réseau et aux clients finaux, intégrant une
+                gestion avancée de serveurs de messagerie dans un environnement
+                multi-tenant à bases de données multiples.
               </li>
               <li>
-                Collaboration avec l’équipe de développement pour intégrer harmonieusement le front-end et le back-end, assurant la cohérence globale du site.
+                Mise en place de systèmes de filtrage anti-spam et anti-virus,
+                avec une interface responsive et compatible multi-navigateurs
+                (Chrome, Edge, Safari).
               </li>
               <li>
-                Utilisation de Figma pour transformer les maquettes en prototypes interactifs, facilitant les itérations rapides et la compréhension des besoins du projet.
+                Conception et développement d’applications web robustes et
+                scalables avec Vue.js, Nuxt 3 et Laravel.
               </li>
               <li>
-                Gestion de projet avec Notion pour suivre les tâches, les jalons et l’avancement du projet, assurant une approche organisée et méthodique durant tout le développement.
+                Implémentation et optimisation d’APIs REST avec MySQL, tests
+                effectués via REST Client.
+              </li>
+              <li>
+                Rédaction et exécution de tests unitaires, automatisés et
+                end-to-end (Vitest, Cypress) pour assurer la qualité du code.
+              </li>
+              <li>
+                Amélioration des pipelines CI/CD sous GitLab dans un
+                environnement Dockerisé, en collaboration avec l’équipe DevOps.
+              </li>
+              <li>
+                Pratique quotidienne des méthodologies Agile : participation aux
+                stand-ups, sprint reviews et rétrospectives ; suivi des tâches
+                via GitLab, Jira et Teams.
+              </li>
+              <li>
+                Expérience en pair programming et code review, avec une forte
+                culture d’amélioration continue.
+              </li>
+              <li>
+                Veille technologique régulière sur Vue.js, Laravel, DevOps, Ia
+                et les bonnes pratiques de développement moderne.
+              </li>
+              <li>
+                Contribution au développement du front-end d’un outil interne de
+                monitoring en React et GraphQL pour le suivi en temps réel des
+                nouveaux clients, de l’état des infrastructures, des KPIs et des
+                tickets support produit.
               </li>
             </ul>
           </div>
-          <div class="content">
-            <h3>Ouvreur | <i>Block'out Lille, Cergy</i></h3>
-            <p>04.2022 – 05.2022</p>
-            <p>06.2018 – 04.2021</p>
-            <ul>
-              <li>Ouverture de 5 blocs par jour</li>
-              <li>Entretien de la salle d’escalade</li>
-              <li>
-                Encadrement de cours enfants et anniversaires de groupe (jusqu’à 30 personnes)
-              </li>
-              <li>Entraînement de l’équipe compétition et des groupes loisirs</li>
-              <li>Service en salle et au bar</li>
-            </ul>
-          </div>
-          <div class="content">
-            <h3>Agent Commercial Immobilier | <i>Era Immobilier Avion</i></h3>
-            <p>09.2021 – 12.2021</p>
-            <ul>
-              <li>Prospection</li>
-              <li>Gestion de la relation client</li>
-              <li>Estimation de biens immobiliers</li>
-            </ul>
-          </div>
+          <h3>Étudiant DevOps | <i>EPSI Grenoble</i></h3>
+          <p>09.2023 - 12.2023</p>
+          <p>Thèmes et compétences étudiés :</p>
+          <ul>
+            <li>Conception et test de solutions applicatives</li>
+            <li>Administration et conception de solutions d’infrastructure</li>
+            <li>Gestion des données et des projets avec une approche DevOps</li>
+            <li>Communication et veille technologique</li>
+            <li>
+              Développement professionnel et compétences interpersonnelles (soft
+              skills)
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Développeur Web FullStack | <i>Stage</i></h3>
+          <p>Création complète d’un site web pour un groupe de musique</p>
+          <p>04.2023 – 06.2023</p>
+          <ul>
+            <li>
+              Utilisation de React.js et Node.js pour le développement front-end
+              et back-end, Git et Notion pour la gestion de projet, et Figma
+              pour la conception de la maquette.
+            </li>
+            <li>
+              Collaboration avec l’équipe de développement pour intégrer
+              harmonieusement le front-end et le back-end, assurant la cohérence
+              globale du site.
+            </li>
+            <li>
+              Utilisation de Figma pour transformer les maquettes en prototypes
+              interactifs, facilitant les itérations rapides et la compréhension
+              des besoins du projet.
+            </li>
+            <li>
+              Gestion de projet avec Notion pour suivre les tâches, les jalons
+              et l’avancement du projet, assurant une approche organisée et
+              méthodique durant tout le développement.
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Ouvreur | <i>Block'out Lille, Cergy</i></h3>
+          <p>04.2022 – 05.2022</p>
+          <p>06.2018 – 04.2021</p>
+          <ul>
+            <li>Ouverture de 5 blocs par jour</li>
+            <li>Entretien de la salle d’escalade</li>
+            <li>
+              Encadrement de cours enfants et anniversaires de groupe (jusqu’à
+              30 personnes)
+            </li>
+            <li>Entraînement de l’équipe compétition et des groupes loisirs</li>
+            <li>Service en salle et au bar</li>
+          </ul>
+        </div>
+        <div class="content">
+          <h3>Agent Commercial Immobilier | <i>Era Immobilier Avion</i></h3>
+          <p>09.2021 – 12.2021</p>
+          <ul>
+            <li>Prospection</li>
+            <li>Gestion de la relation client</li>
+            <li>Estimation de biens immobiliers</li>
+          </ul>
         </div>
       </section>
-
       <section>
-        <div class="cv">
+        <h2 class="section-title">Cv</h2>
+        <div class="content cv">
+          <a class="cv-btn-img" href="/fr/cv">
+            <img class="cv-img" src="/assets/my-resume.webp" alt="mon-cv" />
+          </a>
           <a
             class="cv-btn"
             href="/assets/my-resume.pdf"
             download="Moreau_Alexandre_resume.pdf">Télécharger mon cv</a
           >
-          <a class="cv-btn-img" href="/fr/cv">
-            <img class="cv-img" src="/assets/my-resume.webp" alt="mon-cv" />
-          </a>
         </div>
       </section>
     </main>
-
-    <ContactCTA />
   </div>
+  <ContactCTA />
 </BaseLayout>
 
 <style>
@@ -262,6 +324,7 @@ import Hero from "../../components/fr/Hero.astro";
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
+    margin-bottom: 2.5rem;
   }
 
   img {
@@ -320,11 +383,10 @@ import Hero from "../../components/fr/Hero.astro";
   }
 
   .cv {
+    grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: 1em;
-    max-width: 80%;
-    margin: 25px auto 0;
   }
 
   .cv-btn {
@@ -345,7 +407,7 @@ import Hero from "../../components/fr/Hero.astro";
   }
 
   .cv-btn::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;

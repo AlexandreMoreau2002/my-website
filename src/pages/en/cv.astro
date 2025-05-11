@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../../layouts/en/BaseLayout.astro";
-import Hero from "../../components/en/Hero.astro";
+import BaseLayout from '../../layouts/en/BaseLayout.astro'
+import Hero from '../../components/en/Hero.astro'
 ---
 
 <BaseLayout title="Resume | Alexandre Moreau" description="About myself">
@@ -23,12 +23,12 @@ import Hero from "../../components/en/Hero.astro";
 
 <style>
   img {
-    margin: auto;
     width: 80%;
+    margin: auto;
+    margin: 2.5rem auto;
   }
 
   a {
-    /* object */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -38,13 +38,11 @@ import Hero from "../../components/en/Hero.astro";
     border-radius: 999rem;
     overflow: hidden;
 
-    /* text */
     text-align: center;
     text-decoration: none;
     line-height: 1.1;
     color: var(--accent-text-over);
 
-    /* background colors */
     background: var(--gradient-accent-orange);
     box-shadow: var(--shadow-md);
   }
@@ -56,9 +54,8 @@ import Hero from "../../components/en/Hero.astro";
     gap: 1rem;
   }
 
-  /* Overlay for hover effects. */
   a::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
