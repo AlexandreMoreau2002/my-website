@@ -3,8 +3,9 @@ title: Snoroc
 publishDate: 2025-04-13 00:10:00
 img: /assets/snoroc.png
 img_alt: Illustration de snoroc
+project_url: https://snoroc.fr/
 description: |
-  Site vitrine dynamique développé en stage pour le groupe de musique Snoroc.
+  Site vitrine dynamique du groupe de musique Snoroc, désormais en production sur snoroc.fr.
 tags:
   - Fullstack
   - Stage
@@ -14,12 +15,14 @@ tags:
   - Figma
   - Notion
   - Express
+  - OVHcloud
+  - GitHub Actions
 lang: "fr"
 ---
 
 ### Introduction
 
-Dans le cadre de mon stage de fin de formation pour le Titre Professionnel de Développeur Web et Web Mobile, j’ai eu l’opportunité de concevoir un site vitrine dynamique pour le groupe de musique **Snoroc**. Ce projet, bien que n’ayant pu être finalisé dans le temps imparti, m’a permis de mobiliser un large éventail de compétences techniques en environnement fullstack, tout en découvrant les méthodes concrètes de gestion de projet.
+Dans le cadre de mon stage de fin de formation pour le Titre Professionnel de Développeur Web et Web Mobile, j’ai conçu et livré un site vitrine dynamique pour le groupe de musique **Snoroc**. Le projet est désormais en ligne à l’adresse [snoroc.fr](https://snoroc.fr/), ce qui a marqué l’aboutissement concret de plusieurs mois de travail fullstack.
 
 ### Objectifs et contexte
 
@@ -32,8 +35,8 @@ Ce projet a été réalisé avec les technologies suivantes :
 - **Front-end** : React.js, HTML5, CSS3 avec Sass
 - **Back-end** : Node.js avec Express
 - **Base de données** : MySQL
-- **Outils de gestion de projet** : Git pour le versioning, Notion pour le suivi de tâches
-- **Maquettage & design** : Figma
+- **Gestion de projet & design** : Git pour le versioning, Notion pour le suivi des tâches, maquettes sur Figma
+- **Hébergement & CI/CD** : Déploiement automatisé via GitHub Actions sur un hébergement OVHcloud
 
 ### Fonctionnalités mises en œuvre
 
@@ -43,12 +46,14 @@ Ce projet a été réalisé avec les technologies suivantes :
 - Intégration continue du front et du back pour assurer une cohérence globale de l’application
 - Configuration d’une base de données relationnelle avec MySQL
 - Mise en place d’un suivi rigoureux du projet via Notion pour prioriser les tâches et suivre l’avancement
+- Automatisation complète de la chaîne de déploiement (tests, build, mise en ligne) via GitHub Actions vers l’hébergement OVHcloud
 
 ### Bilan
 
-Même si le projet n’a pas été entièrement livré dans le délai imparti, il représente une expérience riche qui m’a permis d'approfondir mes compétences en développement fullstack, d’adopter une démarche de conception orientée utilisateur, et de mieux comprendre l’importance de l’organisation dans un projet réel.
+La mise en production sur OVHcloud m’a permis de concrétiser chaque étape du cycle de vie applicatif : conception, développement, tests, CI/CD et déploiement. J’ai ainsi renforcé mes compétences en développement fullstack, en organisation de projet et en industrialisation de la livraison.
 
 ### Liens
 
+- [Site en ligne](https://snoroc.fr/)
 - [Dépôt GitHub – Frontend](https://github.com/AlexandreMoreau2002/snoroc_front)
 - [Dépôt GitHub – Backend](https://github.com/AlexandreMoreau2002/snoroc_back)

@@ -12,6 +12,7 @@ export const collections = {
       tags: z.array(z.string()),
       img: z.string(),
       img_alt: z.string().optional(),
+      project_url: z.string().url().optional(),
       lang: z.enum(['fr', 'en']),
     }),
   }),

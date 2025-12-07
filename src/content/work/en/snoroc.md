@@ -3,8 +3,9 @@ title: Snoroc
 publishDate: 2025-04-13 00:10:00
 img: /assets/snoroc.png
 img_alt: Snoroc illustration
+project_url: https://snoroc.fr/
 description: |
-  Dynamic showcase website developed during an internship for the music band Snoroc.
+  Dynamic showcase website for the Snoroc band, now live in production at snoroc.fr.
 tags:
   - Fullstack
   - Internship
@@ -14,12 +15,14 @@ tags:
   - Figma
   - Notion
   - Express
+  - OVHcloud
+  - GitHub Actions
 lang: "en"
 ---
 
 ### Introduction
 
-As part of my final internship for the Web and Mobile Web Developer Professional Certificate, I had the opportunity to design and build a dynamic showcase website for the music band **Snoroc**. Although the project couldn’t be completed within the given time, it offered a rich learning experience in fullstack development and project organization.
+As part of my final internship for the Web and Mobile Web Developer Professional Certificate, I designed and delivered a dynamic showcase website for the music band **Snoroc**. The project is now live at [snoroc.fr](https://snoroc.fr/), turning months of work into a production-ready product.
 
 ### Goals and context
 
@@ -32,8 +35,8 @@ This project was built using the following technologies:
 - **Frontend**: React.js, HTML5, CSS3 with Sass
 - **Backend**: Node.js with Express
 - **Database**: MySQL
-- **Project management tools**: Git for version control, Notion for task tracking
-- **Design & Prototyping**: Figma
+- **Project management & design**: Git for version control, Notion for task tracking, prototypes in Figma
+- **Hosting & CI/CD**: Automated GitHub Actions workflows deploying to OVHcloud hosting
 
 ### Implemented features
 
@@ -43,12 +46,14 @@ This project was built using the following technologies:
 - Integrated frontend and backend for consistent and reliable communication
 - Set up a MySQL relational database
 - Used Notion to organize tasks, priorities, and project milestones
+- Automated the deployment pipeline (tests, build, release) through GitHub Actions to OVHcloud
 
 ### Takeaways
 
-Despite not reaching full delivery within the internship timeframe, this project was a valuable experience. It strengthened my fullstack skills, introduced me to user-centered design, and highlighted the importance of planning and task management in real-world development.
+Going all the way to a live deployment on OVHcloud helped me experience each step of a product lifecycle: design, development, testing, CI/CD, and release management. It strengthened my fullstack skills, my user-focused approach, and my ability to industrialize delivery.
 
 ### Links
 
+- [Live website](https://snoroc.fr/)
 - [GitHub Repository – Frontend](https://github.com/AlexandreMoreau2002/snoroc_front)
 - [GitHub Repository – Backend](https://github.com/AlexandreMoreau2002/snoroc_back)
