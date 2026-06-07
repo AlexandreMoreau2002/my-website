@@ -10,13 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/react": "^4.4.2",
-    "@astrojs/tailwind": "^6.0.2",
-    "firebase-tools": "^15.5.1",
-    "typescript": "^5.9.3"
+     "@astrojs/check": "^0.9.9",
+    "@astrojs/react": "^5.0.7",
+    "firebase-tools": "^15.19.1",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "astro": "^5.17.1"
+    "astro": "^6.4.4"
   }
 }

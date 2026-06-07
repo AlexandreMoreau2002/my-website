@@ -5,7 +5,8 @@ interface Props {
 	project: CollectionEntry<'work'>;
 }
 
-const { data, slug } = Astro.props.project;
+const { data, id } = Astro.props.project;
+const slug = id.split('/').pop();
 ---
 
 <a class="card" href={`/${data.lang}/work/${slug}`}>
