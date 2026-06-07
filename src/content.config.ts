@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders'
-import { defineCollection, z, type CollectionEntry } from 'astro:content'
+import { z } from 'zod'
+import { defineCollection, type CollectionEntry } from 'astro:content'
 
 export type WorkEntry = CollectionEntry<'work'>
 
