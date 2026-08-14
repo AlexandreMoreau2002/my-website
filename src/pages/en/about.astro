@@ -193,6 +193,7 @@ import Hero from '../../components/en/Hero.astro'
           <div class="background">
             <h3>FullStack Developer | <i>Grow-your-business — Arras (remote)</i></h3>
             <p>01.2026 – Present</p>
+            <span class="duration-badge" data-start="2026-01" data-end="present"></span>
             <ul>
               <li>
                 Assignment with a major player in the Energy Savings Certificate
@@ -220,6 +221,7 @@ import Hero from '../../components/en/Hero.astro'
           <div class="background">
             <h3>FullStack Developer | <i>Cloudbreak</i></h3>
             <p>05.2026 – Present</p>
+            <span class="duration-badge" data-start="2026-05" data-end="present"></span>
             <ul>
               <li>Development of a B2C mountain mobile app.</li>
             </ul>
@@ -227,6 +229,7 @@ import Hero from '../../components/en/Hero.astro'
           <div class="background">
             <h3>FullStack Developer | <i>Thomyris chambery</i></h3>
             <p>10.2024 – 01.2026</p>
+            <span class="duration-badge" data-start="2024-10" data-end="2026-01"></span>
             <ul>
               <li>
                 Development of a SaaS application for both enterprise and end
@@ -277,6 +280,7 @@ import Hero from '../../components/en/Hero.astro'
           </div>
           <h3>Devops Studient | <i>EPSI Grenoble</i></h3>
           <p>09.2023 - 12.2023</p>
+          <span class="duration-badge" data-start="2023-09" data-end="2023-12"></span>
           <p>Themes and Skills Studied:</p>
           <ul>
             <li>Designing and testing application solutions</li>
@@ -293,6 +297,7 @@ import Hero from '../../components/en/Hero.astro'
             <a href="https://snoroc.fr" target="_blank" rel="noopener noreferrer">snoroc.fr</a>
           </p>
           <p>04.2023 – 06.2023</p>
+          <span class="duration-badge" data-start="2023-04" data-end="2023-06"></span>
           <ul>
             <li>
               Using React.js and Node.js for front-end and back-end development,
@@ -321,6 +326,32 @@ import Hero from '../../components/en/Hero.astro'
 
   <ContactCTA />
 </BaseLayout>
+
+<script>
+	// Computes and displays each Background entry's duration,
+	// recalculated on every visit (not frozen at build time).
+	function formatDuration(startStr: string, endStr: string) {
+		const [sy, sm] = startStr.split('-').map(Number);
+		const now = new Date();
+		const [ey, em] =
+			endStr === 'present'
+				? [now.getFullYear(), now.getMonth() + 1]
+				: endStr.split('-').map(Number);
+		let months = (ey - sy) * 12 + (em - sm);
+		if (months < 1) months = 1;
+		const years = Math.floor(months / 12);
+		const rest = months % 12;
+		const parts: string[] = [];
+		if (years) parts.push(`${years} year${years > 1 ? 's' : ''}`);
+		if (rest || !years) parts.push(`${rest} month${rest > 1 ? 's' : ''}`);
+		return parts.join(' ');
+	}
+
+	document.querySelectorAll<HTMLElement>('.duration-badge[data-start]').forEach((el) => {
+		const { start, end } = el.dataset;
+		if (start && end) el.textContent = formatDuration(start, end);
+	});
+</script>
 
 <style>
   .about {
@@ -463,5 +494,20 @@ import Hero from '../../components/en/Hero.astro'
       padding: 1.125rem 2.5rem;
       font-size: var(--text-xl);
     }
+  }
+
+  .duration-badge {
+    display: inline-block;
+    margin-top: 0.35em;
+    padding: 0.2em 0.7em;
+    color: var(--accent-regular);
+    background-color: var(--gray-999_40);
+    border: 1px solid var(--gray-800);
+    border-radius: 999rem;
+    font-size: var(--text-sm);
+  }
+
+  .duration-badge:empty {
+    display: none;
   }
 </style>
