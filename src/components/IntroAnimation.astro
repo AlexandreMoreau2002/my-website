@@ -1,0 +1,75 @@
+---
+// Overlay vidéo plein écran, joué une fois par session de navigateur (sessionStorage),
+// uniquement sur la home. 4 variantes : thème (clair/sombre) × viewport (desktop/mobile).
+---
+
+<div id="intro-overlay" class="intro-overlay" hidden>
+	<video id="intro-video" muted playsinline></video>
+</div>
+
+<style>
+	.intro-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 99999;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		background: var(--gray-999);
+		transition: opacity 0.4s ease;
+	}
+
+	/* `display: flex` doit rester scopé à `.active` — sinon cette règle l'emporte
+	   sur `[hidden]` dans la cascade et l'overlay reste visible même une fois
+	   masqué, bloquant toute la page sur chaque navigation suivante. */
+	.intro-overlay.active {
+		display: flex;
+	}
+
+	.intro-overlay.fade-out {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
+
+<script>
+	(function () {
+		const SESSION_KEY = 'introPlayed';
+		if (sessionStorage.getItem(SESSION_KEY)) return;
+
+		const overlay = document.getElementById('intro-overlay');
+		const video = document.getElementById('intro-video') as HTMLVideoElement | null;
+		if (!overlay || !video) return;
+
+		const isDark = document.documentElement.classList.contains('theme-dark');
+		const isMobile = !window.matchMedia('(min-width: 50em)').matches;
+
+		const file = isMobile
+			? (isDark ? 'intro-mobile-dark.mp4' : 'intro-mobile-light.mp4')
+			: (isDark ? 'intro-desktop-dark.mp4' : 'intro-desktop-light.mp4');
+
+		video.src = `/intro/${file}`;
+		overlay.hidden = false;
+		overlay.classList.add('active');
+
+		const finish = () => {
+			sessionStorage.setItem(SESSION_KEY, '1');
+			overlay.classList.add('fade-out');
+			setTimeout(() => overlay.remove(), 450);
+		};
+
+		video.addEventListener('ended', finish);
+		video.addEventListener('error', finish);
+		// Filet de sécurité : si la vidéo bloque plus de 8s (réseau lent), ne jamais
+		// retenir l'utilisateur hors du site.
+		setTimeout(finish, 8000);
+
+		video.play().catch(finish);
+	})();
+</script>
