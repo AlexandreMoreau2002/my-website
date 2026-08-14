@@ -1,3 +1,16 @@
----
-console.log("test")
----
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="refresh" content="0; url=/fr/" />
+		<title>Alexandre Moreau</title>
+		<script>
+			// Redirection côté client selon la langue du navigateur : anglais → /en/,
+			// tout le reste (dont français) → /fr/, le public visé étant francophone.
+			const preferredLang = navigator.language.toLowerCase();
+			const destination = preferredLang.startsWith('en') ? '/en/' : '/fr/';
+			window.location.replace(destination);
+		</script>
+	</head>
+	<body></body>
+</html>
