@@ -147,6 +147,14 @@ import Hero from '../../components/en/Hero.astro'
               <Icon icon="notion" size="3em" />
               <p>Notion</p>
             </span>
+            <span>
+              <Icon icon="claude" size="3em" />
+              <p>Claude</p>
+            </span>
+            <span>
+              <img class="logo-img" src="/assets/logos/codex.jpeg" alt="Codex" />
+              <p>Codex</p>
+            </span>
           </div>
         </div>
       </section>
@@ -183,7 +191,7 @@ import Hero from '../../components/en/Hero.astro'
         <h2 class="section-title">Background</h2>
         <div class="content">
           <div class="background">
-            <h3>FullStack Developer | <i>Grow-your-business — La Défense</i></h3>
+            <h3>FullStack Developer | <i>Grow-your-business — Arras (remote)</i></h3>
             <p>01.2025 – Present</p>
             <ul>
               <li>
@@ -207,6 +215,13 @@ import Hero from '../../components/en/Hero.astro'
                 Client-facing mission in a consulting (ESN) context, with a
                 strong focus on delivery and code quality.
               </li>
+            </ul>
+          </div>
+          <div class="background">
+            <h3>FullStack Developer | <i>Cloudbreak</i></h3>
+            <p>05.2026 – Present</p>
+            <ul>
+              <li>Development of a B2C mountain mobile app.</li>
             </ul>
           </div>
           <div class="background">
@@ -273,7 +288,10 @@ import Hero from '../../components/en/Hero.astro'
         </div>
         <div class="content">
           <h3>FullStack Web Developer | <i>internship</i></h3>
-          <p>Complete creation of a music group website</p>
+          <p>
+            Complete creation of a music group website —
+            <a href="https://snoroc.fr" target="_blank" rel="noopener noreferrer">snoroc.fr</a>
+          </p>
           <p>04.2023 – 06.2023</p>
           <ul>
             <li>
@@ -296,44 +314,6 @@ import Hero from '../../components/en/Hero.astro'
               throughout development.
             </li>
           </ul>
-        </div>
-        <div class="content">
-          <h3>Climbing Routesetter | <i>Block'out Lille, Cergy</i></h3>
-          <p>04.2022 – 05.2022</p>
-          <p>06.2018 – 04.2021</p>
-          <ul>
-            <li>Routesetting of 5 routes by day</li>
-            <li>Maintenance of the climbing gym</li>
-            <li>
-              Supervision of children's classes and group birthdays for up to 30
-              people
-            </li>
-            <li>Coaching the competition team and recreational groups</li>
-            <li>Server, Bartender</li>
-          </ul>
-        </div>
-        <div class="content">
-          <h3>Real Estate Sales Agent | <i>Era Immobilier Avion</i></h3>
-          <p>09.2021 – 12.2021</p>
-          <ul>
-            <li>Prospecting</li>
-            <li>Client relationship management</li>
-            <li>Real estate valuation</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="section-title">Cv</h2>
-        <div class="cv">
-          <a class="cv-btn-img" href="/en/cv">
-            <img class="cv-img" src="/assets/my-resume.webp" alt="my-resume" />
-          </a>
-          <a
-            class="cv-btn"
-            href="/assets/my-resume.pdf"
-            download="Moreau_Alexandre_resume.pdf">Download CV</a
-          >
         </div>
       </section>
     </main>
@@ -395,8 +375,18 @@ import Hero from '../../components/en/Hero.astro'
   .content-logo {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2em;
+    gap: 1.8em 2em;
     text-align: center;
+  }
+
+  .logo-img {
+    display: block;
+    width: 3em;
+    height: 3em;
+    margin-top: 0;
+    border-radius: 0.6em;
+    object-fit: cover;
+    vertical-align: top;
   }
 
   .soft-skills {
